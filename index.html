@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-title-key="title.home">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,26 +26,45 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .game-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      .game-actions .btn {
+        flex: 1 1 160px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <main class="wrap">
+      <div class="home-top"><span class="lang-slot"></span></div>
       <section class="studio">
         <div class="balls-row" aria-hidden="true">
           <span class="ball">2</span><span class="ball b4">4</span><span class="ball b8">8</span>
         </div>
         <h1>Aiplaz</h1>
-        <p class="meta">We make small mobile games: quick to learn, made with care.</p>
+        <p class="meta" data-i18n="home.tagline">We make small mobile games: quick to learn, made with care.</p>
       </section>
 
-      <h2>Our games</h2>
-      <a class="card game" href="tumble-jar/">
-        <img src="tumble-jar/icon.png" width="80" height="80" alt="" />
-        <div>
-          <h3>Tumble Jar</h3>
-          <p>A physics merge game: throw numbered balls into a jar, merge equal ones and keep the rising water down.</p>
-          <span class="badge">In testing on Google Play</span>
+      <h2 data-i18n="home.games">Our games</h2>
+      <div class="card game-box">
+        <a class="game" href="tumble-jar/" data-keep-lang>
+          <img src="tumble-jar/icon.png" width="80" height="80" alt="" />
+          <div>
+            <h3>Tumble Jar</h3>
+            <p data-i18n="home.tj">A physics merge game: throw numbered balls into a jar, merge equal ones and keep the rising water down.</p>
+            <span class="badge" data-i18n="badge.testing">In testing on Google Play</span>
+          </div>
+        </a>
+        <div class="game-actions">
+          <a class="btn primary" href="tumble-jar/test" data-keep-lang data-i18n="btn.join">Join the test</a>
+          <a class="btn" href="tumble-jar/" data-keep-lang data-i18n="btn.about">About the game</a>
         </div>
-      </a>
+      </div>
     </main>
 
     <footer class="water">
@@ -58,5 +77,6 @@
         <p>© 2026 Aiplaz · Contact: <a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
       </div>
     </footer>
+    <script src="i18n.js"></script>
   </body>
 </html>

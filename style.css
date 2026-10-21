@@ -495,3 +495,19 @@ footer.water p {
     padding-top: 28px;
   }
 }
+
+/* Language switcher (i18n.js) */
+.lang-select {
+  font: 600 14px/1.2 var(--sans);
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 10px;
+  max-width: 150px;
+}
+.home-top {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 18px;
+}

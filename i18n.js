@@ -1,0 +1,439 @@
+/* Site translations: the page is written in English; elements with data-i18n (text) or data-i18n-html
+   (trusted markup from this file) get the chosen language. The language comes from ?lang=, then the saved
+   choice, then the browser. A <select> is added into every element with class "lang-slot". */
+(function () {
+  var LANGS = [
+    ['en', 'English'], ['ro', 'Română'], ['de', 'Deutsch'], ['es', 'Español'], ['fr', 'Français'],
+    ['it', 'Italiano'], ['pt-BR', 'Português (Brasil)'], ['ru', 'Русский'], ['uk', 'Українська'],
+    ['tr', 'Türkçe'], ['ja', '日本語'], ['ko', '한국어'], ['zh-Hans', '简体中文']
+  ];
+  var MAIL = '<a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a>';
+  var T = {
+    en: {
+      'title.home': 'Aiplaz · Small mobile games', 'title.game': 'Tumble Jar · Merge the balls, keep the water down', 'title.test': 'Join the test · Tumble Jar',
+      'nav.support': 'Support', 'nav.privacy': 'Privacy', 'ft.privacy': 'Privacy policy', 'ft.delete': 'Delete your data', 'ft.made': 'Tumble Jar is made by', 'ft.contact': 'Contact:',
+      'badge.testing': 'In testing on Google Play', 'btn.join': 'Join the test', 'btn.about': 'About the game',
+      'home.tagline': 'We make small mobile games: quick to learn, made with care.', 'home.games': 'Our games',
+      'home.tj': 'A physics merge game: throw numbered balls into a jar, merge equal ones and keep the rising water down.',
+      'g.tagline': 'Merge the balls. Keep the water down.',
+      'g.lead': 'Tumble Jar is a physics merge game. Throw numbered balls into a jar that fills the whole screen: two equal balls merge into the next number, from 2 all the way up to 4096. The water keeps rising, and only a merge that touches it boils some away, so aim well before the jar floods.',
+      'g.cta': 'Play it before launch: join the test in three taps.',
+      'f1.t': 'One finger', 'f1.d': 'Touch the jar, slide sideways to aim and lift your finger to throw. A quick tap drops the ball straight down.',
+      'f2.t': 'Equal balls merge', 'f2.d': '2 and 2 make 4, 4 and 4 make 8, and so on up to 4096.',
+      'f3.t': 'The water keeps rising', 'f3.d': 'A merge in the water boils some of it off. Merge fast enough in the water and it starts to boil, for double points.',
+      'f4.t': 'Bombs and stones', 'f4.d': 'Bombs clear small balls. Drop too fast in one spot and the ball turns into a stone that never goes away.',
+      'f5.t': 'Levels that get harder', 'f5.d': 'The higher your score, the wilder the jar: calm, then bombs, waves, big balls and storms.',
+      'f6.t': 'One mode: Endless', 'f6.d': 'Play until the jar is full and beat your best score. Your statistics stay on your phone.',
+      'f7.t': '13 languages, no account', 'f7.d': 'Plays offline. No account needed.',
+      't.h1': 'Join the test', 't.tagline': 'Play Tumble Jar before everyone else.',
+      't.lead': 'Tumble Jar is almost ready for Google Play, and we need testers on Android for 14 days. It’s free, it takes three taps, and you play the full game.',
+      's1.t': 'Join the testers group', 's1.d': 'Open the group and tap <em>Join group</em>. Use the same Google account as your Play Store.', 's1.b': 'Join the group',
+      's2.t': 'Become a tester', 's2.d': 'Open the test page and tap <em>Become a tester</em>.', 's2.b': 'Become a tester',
+      's3.t': 'Install Tumble Jar', 's3.d': 'Install it from Google Play on your Android phone. If it doesn’t show yet, wait a few minutes and try again.', 's3.b': 'Install from Google Play',
+      's4.t': 'Stay for 14 days', 's4.d': 'Keep the app installed and play a few games on different days. Google only lets us launch after testers stay in the test for 14 days in a row.',
+      'fb.t': 'Tell us what you think', 'fb.d': 'Found a bug or have an idea? Write to ' + MAIL + ', or use <em>Send feedback</em> on the test page. Your feedback goes straight into the next update.',
+      'q.t': 'Questions',
+      'q1': '<strong>The install page says the app isn’t available.</strong> Make sure you finished steps 1 and 2 with the same Google account as your Play Store, then wait a few minutes.',
+      'q2': '<strong>iPhone?</strong> Tumble Jar is Android only for now.',
+      'q3': '<strong>Can I leave?</strong> Yes, at any time, on the test page. We never ask for passwords, payment or personal details.',
+      't.small': 'Tumble Jar collects anonymous statistics and crash reports, which you can turn off in Settings. See the <a href="privacy">privacy policy</a>.'
+    },
+    ro: {
+      'title.home': 'Aiplaz · Jocuri mici pentru mobil', 'title.game': 'Tumble Jar · Unește bilele, ține apa jos', 'title.test': 'Intră în test · Tumble Jar',
+      'nav.support': 'Asistență', 'nav.privacy': 'Confidențialitate', 'ft.privacy': 'Politica de confidențialitate', 'ft.delete': 'Șterge-ți datele', 'ft.made': 'Tumble Jar e făcut de', 'ft.contact': 'Contact:',
+      'badge.testing': 'În testare pe Google Play', 'btn.join': 'Intră în test', 'btn.about': 'Despre joc',
+      'home.tagline': 'Facem jocuri mici pentru mobil: ușor de învățat, făcute cu grijă.', 'home.games': 'Jocurile noastre',
+      'home.tj': 'Un joc de unit bile cu fizică: arunci bile cu numere într-un borcan, le unești pe cele egale și ții jos apa care crește.',
+      'g.tagline': 'Unește bilele. Ține apa jos.',
+      'g.lead': 'Tumble Jar e un joc de unit bile cu fizică. Arunci bile cu numere într-un borcan care ocupă tot ecranul: două bile egale se unesc în numărul următor, de la 2 până la 4096. Apa tot crește și doar o unire care o atinge o preface în abur, așa că ochește bine înainte să se umple borcanul.',
+      'g.cta': 'Joacă-l înainte de lansare: intră în test din trei atingeri.',
+      'f1.t': 'Un singur deget', 'f1.d': 'Atinge borcanul, trage în lateral ca să ochești și ridică degetul ca să arunci. O atingere scurtă lasă bila să cadă drept.',
+      'f2.t': 'Bilele egale se unesc', 'f2.d': '2 și 2 fac 4, 4 și 4 fac 8 și tot așa până la 4096.',
+      'f3.t': 'Apa tot crește', 'f3.d': 'O unire în apă preface o parte din ea în abur. Unește destul de repede în apă și începe să fiarbă, pentru puncte duble.',
+      'f4.t': 'Bombe și pietre', 'f4.d': 'Bombele fac curat printre bilele mici. Dacă arunci prea repede în același loc, bila devine o piatră care nu mai pleacă.',
+      'f5.t': 'Niveluri tot mai grele', 'f5.d': 'Cu cât scorul e mai mare, cu atât borcanul e mai sălbatic: calm, apoi bombe, valuri, bile mari și furtuni.',
+      'f6.t': 'Un singur mod: fără sfârșit', 'f6.d': 'Joacă până se umple borcanul și bate-ți recordul. Statisticile rămân pe telefonul tău.',
+      'f7.t': '13 limbi, fără cont', 'f7.d': 'Merge și fără internet. Nu ai nevoie de cont.',
+      't.h1': 'Intră în test', 't.tagline': 'Joacă Tumble Jar înaintea tuturor.',
+      't.lead': 'Tumble Jar e aproape gata pentru Google Play și avem nevoie de testeri cu Android timp de 14 zile. E gratuit, durează trei atingeri și joci jocul complet.',
+      's1.t': 'Intră în grupul testerilor', 's1.d': 'Deschide grupul și apasă <em>Alătură-te grupului</em>. Folosește același cont Google ca în Magazin Play.', 's1.b': 'Intră în grup',
+      's2.t': 'Devino tester', 's2.d': 'Deschide pagina testului și apasă <em>Devino tester</em>.', 's2.b': 'Devino tester',
+      's3.t': 'Instalează Tumble Jar', 's3.d': 'Instalează-l din Google Play pe telefonul tău cu Android. Dacă nu apare încă, mai așteaptă câteva minute și încearcă din nou.', 's3.b': 'Instalează din Google Play',
+      's4.t': 'Rămâi 14 zile', 's4.d': 'Păstrează jocul instalat și joacă din când în când, în zile diferite. Google ne lasă să lansăm doar după ce testerii rămân în test 14 zile la rând.',
+      'fb.t': 'Spune-ne ce crezi', 'fb.d': 'Ai găsit o problemă sau ai o idee? Scrie-ne la ' + MAIL + ' sau folosește <em>Trimite feedback</em> pe pagina testului. Ideile tale ajung direct în următoarea actualizare.',
+      'q.t': 'Întrebări',
+      'q1': '<strong>Pagina de instalare spune că aplicația nu e disponibilă.</strong> Verifică dacă ai făcut pașii 1 și 2 cu același cont Google ca în Magazin Play, apoi mai așteaptă câteva minute.',
+      'q2': '<strong>iPhone?</strong> Deocamdată Tumble Jar e doar pentru Android.',
+      'q3': '<strong>Pot să ies?</strong> Da, oricând, de pe pagina testului. Nu cerem niciodată parole, plăți sau date personale.',
+      't.small': 'Tumble Jar colectează statistici anonime și rapoarte de erori, pe care le poți opri din Setări. Vezi <a href="privacy-ro">politica de confidențialitate</a>.'
+    },
+    de: {
+      'title.home': 'Aiplaz · Kleine Handyspiele', 'title.game': 'Tumble Jar · Verbinde die Kugeln, halt das Wasser unten', 'title.test': 'Mach beim Test mit · Tumble Jar',
+      'nav.support': 'Hilfe', 'nav.privacy': 'Datenschutz', 'ft.privacy': 'Datenschutzerklärung', 'ft.delete': 'Daten löschen', 'ft.made': 'Tumble Jar ist von', 'ft.contact': 'Kontakt:',
+      'badge.testing': 'Im Test auf Google Play', 'btn.join': 'Beim Test mitmachen', 'btn.about': 'Über das Spiel',
+      'home.tagline': 'Wir machen kleine Handyspiele: schnell gelernt, mit Liebe gemacht.', 'home.games': 'Unsere Spiele',
+      'home.tj': 'Ein Physik-Merge-Spiel: Wirf Zahlenkugeln in ein Glas, verbinde gleiche und halt das steigende Wasser unten.',
+      'g.tagline': 'Verbinde die Kugeln. Halt das Wasser unten.',
+      'g.lead': 'Tumble Jar ist ein Physik-Merge-Spiel. Wirf Zahlenkugeln in ein Glas, das den ganzen Bildschirm füllt: Zwei gleiche Kugeln werden zur nächsten Zahl, von 2 bis 4096. Das Wasser steigt immer weiter, und nur ein Merge, der es berührt, lässt etwas davon verdampfen. Also gut zielen, bevor das Glas überläuft.',
+      'g.cta': 'Spiel es vor dem Start: Mach mit drei Fingertipps beim Test mit.',
+      'f1.t': 'Ein Finger', 'f1.d': 'Tippe ins Glas, wische seitlich zum Zielen und heb den Finger zum Werfen. Ein kurzer Tipp lässt die Kugel gerade fallen.',
+      'f2.t': 'Gleiche Kugeln verbinden sich', 'f2.d': '2 und 2 ergeben 4, 4 und 4 ergeben 8, und so weiter bis 4096.',
+      'f3.t': 'Das Wasser steigt', 'f3.d': 'Ein Merge im Wasser lässt etwas davon verdampfen. Verbinde schnell genug im Wasser und es beginnt zu kochen: doppelte Punkte.',
+      'f4.t': 'Bomben und Steine', 'f4.d': 'Bomben räumen kleine Kugeln weg. Wirfst du zu schnell an dieselbe Stelle, wird die Kugel zu einem Stein, der nie verschwindet.',
+      'f5.t': 'Level, die schwerer werden', 'f5.d': 'Je höher dein Punktestand, desto wilder das Glas: ruhig, dann Bomben, Wellen, große Kugeln und Stürme.',
+      'f6.t': 'Ein Modus: Endlos', 'f6.d': 'Spiel, bis das Glas voll ist, und knack deinen Rekord. Deine Statistiken bleiben auf deinem Handy.',
+      'f7.t': '13 Sprachen, kein Konto', 'f7.d': 'Auch offline spielbar. Kein Konto nötig.',
+      't.h1': 'Mach beim Test mit', 't.tagline': 'Spiel Tumble Jar vor allen anderen.',
+      't.lead': 'Tumble Jar ist fast bereit für Google Play, und wir brauchen 14 Tage lang Tester mit Android. Es ist kostenlos, dauert drei Fingertipps, und du spielst das ganze Spiel.',
+      's1.t': 'Tritt der Testergruppe bei', 's1.d': 'Öffne die Gruppe und tippe auf <em>Gruppe beitreten</em>. Nutze dasselbe Google-Konto wie im Play Store.', 's1.b': 'Gruppe öffnen',
+      's2.t': 'Werde Tester', 's2.d': 'Öffne die Testseite und tippe auf <em>Tester werden</em>.', 's2.b': 'Tester werden',
+      's3.t': 'Installiere Tumble Jar', 's3.d': 'Installiere es aus Google Play auf deinem Android-Handy. Wird es noch nicht angezeigt, warte ein paar Minuten und versuch es erneut.', 's3.b': 'Aus Google Play installieren',
+      's4.t': 'Bleib 14 Tage dabei', 's4.d': 'Lass die App installiert und spiel an verschiedenen Tagen ein paar Runden. Google lässt uns erst starten, wenn Tester 14 Tage am Stück im Test bleiben.',
+      'fb.t': 'Sag uns deine Meinung', 'fb.d': 'Einen Fehler gefunden oder eine Idee? Schreib an ' + MAIL + ' oder nutze <em>Feedback senden</em> auf der Testseite. Dein Feedback fließt direkt ins nächste Update.',
+      'q.t': 'Fragen',
+      'q1': '<strong>Die Installationsseite sagt, die App ist nicht verfügbar.</strong> Prüfe, ob du Schritt 1 und 2 mit demselben Google-Konto wie im Play Store gemacht hast, und warte dann ein paar Minuten.',
+      'q2': '<strong>iPhone?</strong> Tumble Jar gibt es vorerst nur für Android.',
+      'q3': '<strong>Kann ich aussteigen?</strong> Ja, jederzeit auf der Testseite. Wir fragen nie nach Passwörtern, Zahlungen oder persönlichen Daten.',
+      't.small': 'Tumble Jar sammelt anonyme Statistiken und Absturzberichte, die du in den Einstellungen ausschalten kannst. Siehe <a href="privacy">Datenschutzerklärung</a> (Englisch).'
+    },
+    es: {
+      'title.home': 'Aiplaz · Juegos pequeños para móvil', 'title.game': 'Tumble Jar · Une las bolas, mantén el agua a raya', 'title.test': 'Únete a la prueba · Tumble Jar',
+      'nav.support': 'Ayuda', 'nav.privacy': 'Privacidad', 'ft.privacy': 'Política de privacidad', 'ft.delete': 'Eliminar tus datos', 'ft.made': 'Tumble Jar es de', 'ft.contact': 'Contacto:',
+      'badge.testing': 'En pruebas en Google Play', 'btn.join': 'Únete a la prueba', 'btn.about': 'Sobre el juego',
+      'home.tagline': 'Hacemos juegos pequeños para móvil: fáciles de aprender, hechos con cariño.', 'home.games': 'Nuestros juegos',
+      'home.tj': 'Un juego de fusionar con física: lanza bolas numeradas a un tarro, une las iguales y mantén a raya el agua que sube.',
+      'g.tagline': 'Une las bolas. Mantén el agua a raya.',
+      'g.lead': 'Tumble Jar es un juego de fusionar con física. Lanza bolas numeradas a un tarro que ocupa toda la pantalla: dos bolas iguales se unen en el siguiente número, del 2 hasta el 4096. El agua no deja de subir y solo una fusión que la toca evapora una parte, así que apunta bien antes de que se inunde el tarro.',
+      'g.cta': 'Juégalo antes del lanzamiento: únete a la prueba en tres toques.',
+      'f1.t': 'Un solo dedo', 'f1.d': 'Toca el tarro, desliza hacia los lados para apuntar y levanta el dedo para lanzar. Un toque rápido deja caer la bola en línea recta.',
+      'f2.t': 'Las bolas iguales se unen', 'f2.d': '2 y 2 hacen 4, 4 y 4 hacen 8, y así hasta 4096.',
+      'f3.t': 'El agua no deja de subir', 'f3.d': 'Una fusión en el agua evapora una parte. Une rápido dentro del agua y empieza a hervir: puntos dobles.',
+      'f4.t': 'Bombas y piedras', 'f4.d': 'Las bombas limpian las bolas pequeñas. Si lanzas demasiado rápido en el mismo sitio, la bola se convierte en una piedra que nunca desaparece.',
+      'f5.t': 'Niveles cada vez más difíciles', 'f5.d': 'Cuanto más alta tu puntuación, más loco el tarro: calma, luego bombas, olas, bolas grandes y tormentas.',
+      'f6.t': 'Un modo: Infinito', 'f6.d': 'Juega hasta que se llene el tarro y supera tu récord. Tus estadísticas se quedan en tu móvil.',
+      'f7.t': '13 idiomas, sin cuenta', 'f7.d': 'Funciona sin conexión. No necesitas cuenta.',
+      't.h1': 'Únete a la prueba', 't.tagline': 'Juega a Tumble Jar antes que nadie.',
+      't.lead': 'Tumble Jar está casi listo para Google Play y necesitamos testers con Android durante 14 días. Es gratis, son tres toques y juegas al juego completo.',
+      's1.t': 'Únete al grupo de testers', 's1.d': 'Abre el grupo y toca <em>Unirse al grupo</em>. Usa la misma cuenta de Google que en Play Store.', 's1.b': 'Abrir el grupo',
+      's2.t': 'Hazte tester', 's2.d': 'Abre la página de la prueba y toca <em>Convertirse en tester</em>.', 's2.b': 'Hazte tester',
+      's3.t': 'Instala Tumble Jar', 's3.d': 'Instálalo desde Google Play en tu móvil Android. Si aún no aparece, espera unos minutos y vuelve a intentarlo.', 's3.b': 'Instalar desde Google Play',
+      's4.t': 'Quédate 14 días', 's4.d': 'Mantén la app instalada y juega algunas partidas en días distintos. Google solo nos deja lanzar cuando los testers siguen en la prueba 14 días seguidos.',
+      'fb.t': 'Cuéntanos qué te parece', 'fb.d': '¿Has encontrado un fallo o tienes una idea? Escribe a ' + MAIL + ' o usa <em>Enviar comentarios</em> en la página de la prueba. Tus ideas van directas a la próxima actualización.',
+      'q.t': 'Preguntas',
+      'q1': '<strong>La página de instalación dice que la app no está disponible.</strong> Comprueba que hiciste los pasos 1 y 2 con la misma cuenta de Google que en Play Store y espera unos minutos.',
+      'q2': '<strong>¿iPhone?</strong> Por ahora Tumble Jar es solo para Android.',
+      'q3': '<strong>¿Puedo salir?</strong> Sí, cuando quieras, desde la página de la prueba. Nunca pedimos contraseñas, pagos ni datos personales.',
+      't.small': 'Tumble Jar recoge estadísticas anónimas e informes de errores, que puedes desactivar en Ajustes. Consulta la <a href="privacy">política de privacidad</a> (en inglés).'
+    },
+    fr: {
+      'title.home': 'Aiplaz · Petits jeux mobiles', 'title.game': 'Tumble Jar · Fusionne les billes, garde l’eau basse', 'title.test': 'Rejoins le test · Tumble Jar',
+      'nav.support': 'Aide', 'nav.privacy': 'Confidentialité', 'ft.privacy': 'Politique de confidentialité', 'ft.delete': 'Supprimer tes données', 'ft.made': 'Tumble Jar est créé par', 'ft.contact': 'Contact :',
+      'badge.testing': 'En test sur Google Play', 'btn.join': 'Rejoindre le test', 'btn.about': 'À propos du jeu',
+      'home.tagline': 'Nous faisons de petits jeux mobiles : vite appris, faits avec soin.', 'home.games': 'Nos jeux',
+      'home.tj': 'Un jeu de fusion avec physique : lance des billes numérotées dans un bocal, fusionne celles qui sont égales et garde l’eau qui monte au plus bas.',
+      'g.tagline': 'Fusionne les billes. Garde l’eau basse.',
+      'g.lead': 'Tumble Jar est un jeu de fusion avec physique. Lance des billes numérotées dans un bocal qui remplit tout l’écran : deux billes égales fusionnent en nombre suivant, de 2 jusqu’à 4096. L’eau monte sans cesse et seule une fusion qui la touche en fait évaporer une partie : vise bien avant que le bocal déborde.',
+      'g.cta': 'Joue avant la sortie : rejoins le test en trois touches.',
+      'f1.t': 'Un seul doigt', 'f1.d': 'Touche le bocal, glisse sur le côté pour viser et lève le doigt pour lancer. Une touche rapide fait tomber la bille tout droit.',
+      'f2.t': 'Les billes égales fusionnent', 'f2.d': '2 et 2 font 4, 4 et 4 font 8, et ainsi de suite jusqu’à 4096.',
+      'f3.t': 'L’eau monte sans cesse', 'f3.d': 'Une fusion dans l’eau en fait évaporer une partie. Fusionne assez vite dans l’eau et elle se met à bouillir : points doublés.',
+      'f4.t': 'Bombes et pierres', 'f4.d': 'Les bombes nettoient les petites billes. Lance trop vite au même endroit et la bille devient une pierre qui ne part jamais.',
+      'f5.t': 'Des niveaux de plus en plus durs', 'f5.d': 'Plus ton score monte, plus le bocal s’agite : calme, puis bombes, vagues, grosses billes et tempêtes.',
+      'f6.t': 'Un mode : Infini', 'f6.d': 'Joue jusqu’à ce que le bocal soit plein et bats ton record. Tes statistiques restent sur ton téléphone.',
+      'f7.t': '13 langues, sans compte', 'f7.d': 'Fonctionne hors ligne. Aucun compte nécessaire.',
+      't.h1': 'Rejoins le test', 't.tagline': 'Joue à Tumble Jar avant tout le monde.',
+      't.lead': 'Tumble Jar est presque prêt pour Google Play et nous cherchons des testeurs Android pendant 14 jours. C’est gratuit, ça prend trois touches et tu joues au jeu complet.',
+      's1.t': 'Rejoins le groupe des testeurs', 's1.d': 'Ouvre le groupe et touche <em>Rejoindre le groupe</em>. Utilise le même compte Google que sur le Play Store.', 's1.b': 'Ouvrir le groupe',
+      's2.t': 'Deviens testeur', 's2.d': 'Ouvre la page du test et touche <em>Devenir testeur</em>.', 's2.b': 'Devenir testeur',
+      's3.t': 'Installe Tumble Jar', 's3.d': 'Installe-le depuis Google Play sur ton téléphone Android. S’il n’apparaît pas encore, attends quelques minutes et réessaie.', 's3.b': 'Installer depuis Google Play',
+      's4.t': 'Reste 14 jours', 's4.d': 'Garde l’appli installée et joue quelques parties à des jours différents. Google ne nous laisse sortir le jeu que si les testeurs restent 14 jours d’affilée.',
+      'fb.t': 'Dis-nous ce que tu en penses', 'fb.d': 'Un bug ou une idée ? Écris à ' + MAIL + ' ou utilise <em>Envoyer des commentaires</em> sur la page du test. Tes retours vont droit dans la prochaine mise à jour.',
+      'q.t': 'Questions',
+      'q1': '<strong>La page d’installation dit que l’appli n’est pas disponible.</strong> Vérifie que tu as fait les étapes 1 et 2 avec le même compte Google que sur le Play Store, puis attends quelques minutes.',
+      'q2': '<strong>iPhone ?</strong> Tumble Jar n’existe pour l’instant que sur Android.',
+      'q3': '<strong>Je peux partir ?</strong> Oui, à tout moment, depuis la page du test. Nous ne demandons jamais de mot de passe, de paiement ni de données personnelles.',
+      't.small': 'Tumble Jar collecte des statistiques anonymes et des rapports de plantage, que tu peux désactiver dans les Réglages. Voir la <a href="privacy">politique de confidentialité</a> (en anglais).'
+    },
+    it: {
+      'title.home': 'Aiplaz · Piccoli giochi per smartphone', 'title.game': 'Tumble Jar · Unisci le palline, tieni bassa l’acqua', 'title.test': 'Partecipa al test · Tumble Jar',
+      'nav.support': 'Assistenza', 'nav.privacy': 'Privacy', 'ft.privacy': 'Informativa sulla privacy', 'ft.delete': 'Elimina i tuoi dati', 'ft.made': 'Tumble Jar è fatto da', 'ft.contact': 'Contatti:',
+      'badge.testing': 'In test su Google Play', 'btn.join': 'Partecipa al test', 'btn.about': 'Il gioco',
+      'home.tagline': 'Facciamo piccoli giochi per smartphone: facili da imparare, fatti con cura.', 'home.games': 'I nostri giochi',
+      'home.tj': 'Un gioco di fusione con la fisica: lancia palline numerate in un barattolo, unisci quelle uguali e tieni bassa l’acqua che sale.',
+      'g.tagline': 'Unisci le palline. Tieni bassa l’acqua.',
+      'g.lead': 'Tumble Jar è un gioco di fusione con la fisica. Lancia palline numerate in un barattolo che riempie tutto lo schermo: due palline uguali si uniscono nel numero successivo, da 2 fino a 4096. L’acqua continua a salire e solo una fusione che la tocca ne fa evaporare un po’: mira bene prima che il barattolo si allaghi.',
+      'g.cta': 'Giocalo prima dell’uscita: partecipa al test in tre tocchi.',
+      'f1.t': 'Un dito solo', 'f1.d': 'Tocca il barattolo, scorri di lato per mirare e solleva il dito per lanciare. Un tocco rapido fa cadere la pallina dritta.',
+      'f2.t': 'Le palline uguali si uniscono', 'f2.d': '2 e 2 fanno 4, 4 e 4 fanno 8, e così via fino a 4096.',
+      'f3.t': 'L’acqua continua a salire', 'f3.d': 'Una fusione nell’acqua ne fa evaporare un po’. Unisci abbastanza in fretta nell’acqua e inizia a bollire: punti doppi.',
+      'f4.t': 'Bombe e sassi', 'f4.d': 'Le bombe ripuliscono le palline piccole. Se lanci troppo in fretta nello stesso punto, la pallina diventa un sasso che non se ne va più.',
+      'f5.t': 'Livelli sempre più difficili', 'f5.d': 'Più alto è il punteggio, più il barattolo si scatena: calma, poi bombe, onde, palline grandi e tempeste.',
+      'f6.t': 'Una modalità: Infinita', 'f6.d': 'Gioca finché il barattolo non è pieno e batti il tuo record. Le statistiche restano sul tuo telefono.',
+      'f7.t': '13 lingue, nessun account', 'f7.d': 'Funziona offline. Nessun account necessario.',
+      't.h1': 'Partecipa al test', 't.tagline': 'Gioca a Tumble Jar prima di tutti.',
+      't.lead': 'Tumble Jar è quasi pronto per Google Play e cerchiamo tester Android per 14 giorni. È gratis, bastano tre tocchi e giochi al gioco completo.',
+      's1.t': 'Entra nel gruppo dei tester', 's1.d': 'Apri il gruppo e tocca <em>Iscriviti al gruppo</em>. Usa lo stesso account Google del Play Store.', 's1.b': 'Apri il gruppo',
+      's2.t': 'Diventa tester', 's2.d': 'Apri la pagina del test e tocca <em>Diventa un tester</em>.', 's2.b': 'Diventa tester',
+      's3.t': 'Installa Tumble Jar', 's3.d': 'Installalo da Google Play sul tuo telefono Android. Se non compare ancora, aspetta qualche minuto e riprova.', 's3.b': 'Installa da Google Play',
+      's4.t': 'Resta per 14 giorni', 's4.d': 'Tieni l’app installata e gioca qualche partita in giorni diversi. Google ci lascia pubblicare solo se i tester restano nel test per 14 giorni di fila.',
+      'fb.t': 'Dicci cosa ne pensi', 'fb.d': 'Hai trovato un bug o hai un’idea? Scrivi a ' + MAIL + ' oppure usa <em>Invia feedback</em> nella pagina del test. Il tuo feedback finisce dritto nel prossimo aggiornamento.',
+      'q.t': 'Domande',
+      'q1': '<strong>La pagina di installazione dice che l’app non è disponibile.</strong> Controlla di aver fatto i passi 1 e 2 con lo stesso account Google del Play Store, poi aspetta qualche minuto.',
+      'q2': '<strong>iPhone?</strong> Per ora Tumble Jar è solo per Android.',
+      'q3': '<strong>Posso uscire?</strong> Sì, quando vuoi, dalla pagina del test. Non chiediamo mai password, pagamenti o dati personali.',
+      't.small': 'Tumble Jar raccoglie statistiche anonime e rapporti sugli arresti anomali, che puoi disattivare nelle Impostazioni. Vedi l’<a href="privacy">informativa sulla privacy</a> (in inglese).'
+    },
+    'pt-BR': {
+      'title.home': 'Aiplaz · Jogos pequenos para celular', 'title.game': 'Tumble Jar · Junte as bolas, mantenha a água baixa', 'title.test': 'Participe do teste · Tumble Jar',
+      'nav.support': 'Suporte', 'nav.privacy': 'Privacidade', 'ft.privacy': 'Política de privacidade', 'ft.delete': 'Excluir seus dados', 'ft.made': 'Tumble Jar é feito pela', 'ft.contact': 'Contato:',
+      'badge.testing': 'Em teste no Google Play', 'btn.join': 'Participar do teste', 'btn.about': 'Sobre o jogo',
+      'home.tagline': 'Fazemos jogos pequenos para celular: fáceis de aprender, feitos com carinho.', 'home.games': 'Nossos jogos',
+      'home.tj': 'Um jogo de juntar com física: jogue bolas numeradas num pote, junte as iguais e mantenha baixa a água que sobe.',
+      'g.tagline': 'Junte as bolas. Mantenha a água baixa.',
+      'g.lead': 'Tumble Jar é um jogo de juntar com física. Jogue bolas numeradas num pote que ocupa a tela inteira: duas bolas iguais viram o próximo número, de 2 até 4096. A água não para de subir e só uma junção que encosta nela evapora um pouco, então mire bem antes que o pote transborde.',
+      'g.cta': 'Jogue antes do lançamento: participe do teste em três toques.',
+      'f1.t': 'Um dedo só', 'f1.d': 'Toque no pote, deslize para o lado para mirar e tire o dedo para jogar. Um toque rápido solta a bola reto para baixo.',
+      'f2.t': 'Bolas iguais se juntam', 'f2.d': '2 e 2 viram 4, 4 e 4 viram 8, e assim até 4096.',
+      'f3.t': 'A água não para de subir', 'f3.d': 'Uma junção na água evapora um pouco dela. Junte rápido o bastante na água e ela começa a ferver: pontos em dobro.',
+      'f4.t': 'Bombas e pedras', 'f4.d': 'Bombas limpam as bolas pequenas. Jogue rápido demais no mesmo lugar e a bola vira uma pedra que nunca sai.',
+      'f5.t': 'Níveis cada vez mais difíceis', 'f5.d': 'Quanto maior a pontuação, mais agitado o pote: calma, depois bombas, ondas, bolas grandes e tempestades.',
+      'f6.t': 'Um modo: Infinito', 'f6.d': 'Jogue até o pote encher e bata seu recorde. Suas estatísticas ficam no seu celular.',
+      'f7.t': '13 idiomas, sem conta', 'f7.d': 'Funciona offline. Não precisa de conta.',
+      't.h1': 'Participe do teste', 't.tagline': 'Jogue Tumble Jar antes de todo mundo.',
+      't.lead': 'Tumble Jar está quase pronto para o Google Play e precisamos de testadores com Android por 14 dias. É grátis, são três toques e você joga o jogo completo.',
+      's1.t': 'Entre no grupo de testadores', 's1.d': 'Abra o grupo e toque em <em>Participar do grupo</em>. Use a mesma conta Google da Play Store.', 's1.b': 'Abrir o grupo',
+      's2.t': 'Torne-se testador', 's2.d': 'Abra a página do teste e toque em <em>Torne-se um testador</em>.', 's2.b': 'Torne-se testador',
+      's3.t': 'Instale o Tumble Jar', 's3.d': 'Instale pelo Google Play no seu celular Android. Se ainda não aparecer, espere alguns minutos e tente de novo.', 's3.b': 'Instalar pelo Google Play',
+      's4.t': 'Fique 14 dias', 's4.d': 'Mantenha o app instalado e jogue algumas partidas em dias diferentes. O Google só nos deixa lançar depois que os testadores ficam no teste por 14 dias seguidos.',
+      'fb.t': 'Conte o que achou', 'fb.d': 'Achou um bug ou teve uma ideia? Escreva para ' + MAIL + ' ou use <em>Enviar feedback</em> na página do teste. Seu feedback vai direto para a próxima atualização.',
+      'q.t': 'Perguntas',
+      'q1': '<strong>A página de instalação diz que o app não está disponível.</strong> Confira se você fez os passos 1 e 2 com a mesma conta Google da Play Store e espere alguns minutos.',
+      'q2': '<strong>iPhone?</strong> Por enquanto o Tumble Jar é só para Android.',
+      'q3': '<strong>Posso sair?</strong> Sim, quando quiser, pela página do teste. Nunca pedimos senhas, pagamentos ou dados pessoais.',
+      't.small': 'O Tumble Jar coleta estatísticas anônimas e relatórios de erros, que você pode desligar nas Configurações. Veja a <a href="privacy">política de privacidade</a> (em inglês).'
+    },
+    ru: {
+      'title.home': 'Aiplaz · Небольшие мобильные игры', 'title.game': 'Tumble Jar · Соединяй шарики, не дай воде подняться', 'title.test': 'Присоединяйся к тесту · Tumble Jar',
+      'nav.support': 'Поддержка', 'nav.privacy': 'Конфиденциальность', 'ft.privacy': 'Политика конфиденциальности', 'ft.delete': 'Удалить данные', 'ft.made': 'Tumble Jar делает', 'ft.contact': 'Контакт:',
+      'badge.testing': 'Тестируется в Google Play', 'btn.join': 'Участвовать в тесте', 'btn.about': 'Об игре',
+      'home.tagline': 'Мы делаем небольшие мобильные игры: их легко освоить, и сделаны они с душой.', 'home.games': 'Наши игры',
+      'home.tj': 'Физическая игра на слияние: бросай шарики с числами в банку, соединяй одинаковые и не дай воде подняться.',
+      'g.tagline': 'Соединяй шарики. Не дай воде подняться.',
+      'g.lead': 'Tumble Jar — физическая игра на слияние. Бросай шарики с числами в банку на весь экран: два одинаковых шарика становятся следующим числом, от 2 до 4096. Вода всё время поднимается, и только слияние, которое её касается, выпаривает часть воды, так что цельтесь точно, пока банка не переполнилась.',
+      'g.cta': 'Сыграй до релиза: присоединяйся к тесту в три касания.',
+      'f1.t': 'Один палец', 'f1.d': 'Коснись банки, веди в сторону, чтобы прицелиться, и отпусти, чтобы бросить. Короткое касание роняет шарик прямо вниз.',
+      'f2.t': 'Одинаковые шарики соединяются', 'f2.d': '2 и 2 дают 4, 4 и 4 дают 8, и так до 4096.',
+      'f3.t': 'Вода всё поднимается', 'f3.d': 'Слияние в воде выпаривает часть воды. Соединяй в воде достаточно быстро, и она закипит: двойные очки.',
+      'f4.t': 'Бомбы и камни', 'f4.d': 'Бомбы убирают маленькие шарики. Если бросать слишком часто в одно место, шарик превратится в камень, который никуда не денется.',
+      'f5.t': 'Уровни всё сложнее', 'f5.d': 'Чем выше счёт, тем буйнее банка: спокойствие, потом бомбы, волны, большие шарики и штормы.',
+      'f6.t': 'Один режим: бесконечный', 'f6.d': 'Играй, пока банка не заполнится, и побей свой рекорд. Статистика хранится на твоём телефоне.',
+      'f7.t': '13 языков, без аккаунта', 'f7.d': 'Работает без интернета. Аккаунт не нужен.',
+      't.h1': 'Присоединяйся к тесту', 't.tagline': 'Сыграй в Tumble Jar раньше всех.',
+      't.lead': 'Tumble Jar почти готова к выходу в Google Play, и нам нужны тестировщики с Android на 14 дней. Это бесплатно, займёт три касания, и ты играешь в полную версию.',
+      's1.t': 'Вступи в группу тестировщиков', 's1.d': 'Открой группу и нажми <em>Присоединиться к группе</em>. Используй тот же аккаунт Google, что и в Play Маркете.', 's1.b': 'Открыть группу',
+      's2.t': 'Стань тестировщиком', 's2.d': 'Открой страницу теста и нажми <em>Стать тестировщиком</em>.', 's2.b': 'Стать тестировщиком',
+      's3.t': 'Установи Tumble Jar', 's3.d': 'Установи игру из Google Play на свой Android-телефон. Если она ещё не видна, подожди несколько минут и попробуй снова.', 's3.b': 'Установить из Google Play',
+      's4.t': 'Останься на 14 дней', 's4.d': 'Не удаляй приложение и сыграй несколько партий в разные дни. Google разрешает нам выпустить игру, только если тестировщики остаются в тесте 14 дней подряд.',
+      'fb.t': 'Расскажи, что думаешь', 'fb.d': 'Нашёл ошибку или есть идея? Напиши на ' + MAIL + ' или используй <em>Отправить отзыв</em> на странице теста. Твой отзыв сразу пойдёт в следующее обновление.',
+      'q.t': 'Вопросы',
+      'q1': '<strong>На странице установки написано, что приложение недоступно.</strong> Проверь, что ты выполнил шаги 1 и 2 с тем же аккаунтом Google, что и в Play Маркете, и подожди несколько минут.',
+      'q2': '<strong>iPhone?</strong> Пока Tumble Jar есть только для Android.',
+      'q3': '<strong>Можно выйти?</strong> Да, в любой момент, на странице теста. Мы никогда не просим пароли, оплату или личные данные.',
+      't.small': 'Tumble Jar собирает анонимную статистику и отчёты о сбоях, их можно отключить в Настройках. См. <a href="privacy">политику конфиденциальности</a> (на английском).'
+    },
+    uk: {
+      'title.home': 'Aiplaz · Невеликі мобільні ігри', 'title.game': 'Tumble Jar · З’єднуй кульки, не дай воді піднятися', 'title.test': 'Долучайся до тесту · Tumble Jar',
+      'nav.support': 'Підтримка', 'nav.privacy': 'Конфіденційність', 'ft.privacy': 'Політика конфіденційності', 'ft.delete': 'Видалити дані', 'ft.made': 'Tumble Jar створює', 'ft.contact': 'Контакт:',
+      'badge.testing': 'Тестується в Google Play', 'btn.join': 'Долучитися до тесту', 'btn.about': 'Про гру',
+      'home.tagline': 'Ми робимо невеликі мобільні ігри: їх легко опанувати, і зроблені вони з любов’ю.', 'home.games': 'Наші ігри',
+      'home.tj': 'Фізична гра на злиття: кидай кульки з числами в банку, з’єднуй однакові й не дай воді піднятися.',
+      'g.tagline': 'З’єднуй кульки. Не дай воді піднятися.',
+      'g.lead': 'Tumble Jar — фізична гра на злиття. Кидай кульки з числами в банку на весь екран: дві однакові кульки стають наступним числом, від 2 до 4096. Вода весь час піднімається, і лише злиття, що її торкається, випаровує частину води, тож цілься влучно, поки банка не переповнилася.',
+      'g.cta': 'Зіграй до релізу: долучайся до тесту в три дотики.',
+      'f1.t': 'Один палець', 'f1.d': 'Торкнися банки, веди вбік, щоб прицілитися, і відпусти, щоб кинути. Короткий дотик кидає кульку прямо вниз.',
+      'f2.t': 'Однакові кульки з’єднуються', 'f2.d': '2 і 2 дають 4, 4 і 4 дають 8, і так до 4096.',
+      'f3.t': 'Вода весь час піднімається', 'f3.d': 'Злиття у воді випаровує частину води. З’єднуй у воді досить швидко, і вона закипить: подвійні очки.',
+      'f4.t': 'Бомби й каміння', 'f4.d': 'Бомби прибирають маленькі кульки. Якщо кидати надто часто в одне місце, кулька стане каменем, що нікуди не дінеться.',
+      'f5.t': 'Рівні дедалі складніші', 'f5.d': 'Що вищий рахунок, то буйніша банка: спокій, потім бомби, хвилі, великі кульки та шторми.',
+      'f6.t': 'Один режим: нескінченний', 'f6.d': 'Грай, доки банка не заповниться, і побий свій рекорд. Статистика зберігається на твоєму телефоні.',
+      'f7.t': '13 мов, без акаунта', 'f7.d': 'Працює без інтернету. Акаунт не потрібен.',
+      't.h1': 'Долучайся до тесту', 't.tagline': 'Зіграй у Tumble Jar раніше за всіх.',
+      't.lead': 'Tumble Jar майже готова до виходу в Google Play, і нам потрібні тестувальники з Android на 14 днів. Це безкоштовно, займе три дотики, і ти граєш у повну версію.',
+      's1.t': 'Вступи до групи тестувальників', 's1.d': 'Відкрий групу й натисни <em>Приєднатися до групи</em>. Використовуй той самий акаунт Google, що й у Play Маркеті.', 's1.b': 'Відкрити групу',
+      's2.t': 'Стань тестувальником', 's2.d': 'Відкрий сторінку тесту й натисни <em>Стати тестувальником</em>.', 's2.b': 'Стати тестувальником',
+      's3.t': 'Встанови Tumble Jar', 's3.d': 'Встанови гру з Google Play на свій Android-телефон. Якщо її ще не видно, зачекай кілька хвилин і спробуй знову.', 's3.b': 'Встановити з Google Play',
+      's4.t': 'Залишайся 14 днів', 's4.d': 'Не видаляй застосунок і зіграй кілька партій у різні дні. Google дозволяє нам випустити гру, лише якщо тестувальники залишаються в тесті 14 днів поспіль.',
+      'fb.t': 'Розкажи, що думаєш', 'fb.d': 'Знайшов помилку чи маєш ідею? Пиши на ' + MAIL + ' або скористайся <em>Надіслати відгук</em> на сторінці тесту. Твій відгук одразу піде в наступне оновлення.',
+      'q.t': 'Запитання',
+      'q1': '<strong>На сторінці встановлення написано, що застосунок недоступний.</strong> Перевір, що ти виконав кроки 1 і 2 з тим самим акаунтом Google, що й у Play Маркеті, і зачекай кілька хвилин.',
+      'q2': '<strong>iPhone?</strong> Поки що Tumble Jar є лише для Android.',
+      'q3': '<strong>Можна вийти?</strong> Так, будь-коли, на сторінці тесту. Ми ніколи не просимо паролі, оплату чи особисті дані.',
+      't.small': 'Tumble Jar збирає анонімну статистику та звіти про збої, їх можна вимкнути в Налаштуваннях. Див. <a href="privacy">політику конфіденційності</a> (англійською).'
+    },
+    tr: {
+      'title.home': 'Aiplaz · Küçük mobil oyunlar', 'title.game': 'Tumble Jar · Topları birleştir, suyu aşağıda tut', 'title.test': 'Teste katıl · Tumble Jar',
+      'nav.support': 'Destek', 'nav.privacy': 'Gizlilik', 'ft.privacy': 'Gizlilik politikası', 'ft.delete': 'Verilerini sil', 'ft.made': 'Tumble Jar’ı yapan:', 'ft.contact': 'İletişim:',
+      'badge.testing': 'Google Play’de testte', 'btn.join': 'Teste katıl', 'btn.about': 'Oyun hakkında',
+      'home.tagline': 'Küçük mobil oyunlar yapıyoruz: öğrenmesi kolay, özenle yapılmış.', 'home.games': 'Oyunlarımız',
+      'home.tj': 'Fizikli bir birleştirme oyunu: numaralı topları bir kavanoza at, aynı olanları birleştir ve yükselen suyu aşağıda tut.',
+      'g.tagline': 'Topları birleştir. Suyu aşağıda tut.',
+      'g.lead': 'Tumble Jar fizikli bir birleştirme oyunu. Numaralı topları tüm ekranı kaplayan bir kavanoza at: iki aynı top bir sonraki sayıya dönüşür, 2’den 4096’ya kadar. Su sürekli yükselir ve yalnızca suya değen bir birleşme onun bir kısmını buharlaştırır; kavanoz taşmadan iyi nişan al.',
+      'g.cta': 'Çıkıştan önce oyna: üç dokunuşla teste katıl.',
+      'f1.t': 'Tek parmak', 'f1.d': 'Kavanoza dokun, nişan almak için yana kaydır ve atmak için parmağını kaldır. Hızlı bir dokunuş topu dümdüz bırakır.',
+      'f2.t': 'Aynı toplar birleşir', 'f2.d': '2 ile 2, 4 olur; 4 ile 4, 8 olur ve böyle 4096’ya kadar gider.',
+      'f3.t': 'Su sürekli yükselir', 'f3.d': 'Suyun içindeki bir birleşme suyun bir kısmını buharlaştırır. Suda yeterince hızlı birleştirirsen su kaynar: puanlar ikiye katlanır.',
+      'f4.t': 'Bombalar ve taşlar', 'f4.d': 'Bombalar küçük topları temizler. Aynı yere çok hızlı atarsan top asla gitmeyen bir taşa dönüşür.',
+      'f5.t': 'Giderek zorlaşan seviyeler', 'f5.d': 'Puanın arttıkça kavanoz çılgınlaşır: önce sakin, sonra bombalar, dalgalar, büyük toplar ve fırtınalar.',
+      'f6.t': 'Tek mod: Sonsuz', 'f6.d': 'Kavanoz dolana kadar oyna ve rekorunu kır. İstatistiklerin telefonunda kalır.',
+      'f7.t': '13 dil, hesap yok', 'f7.d': 'İnternetsiz oynanır. Hesap gerekmez.',
+      't.h1': 'Teste katıl', 't.tagline': 'Tumble Jar’ı herkesten önce oyna.',
+      't.lead': 'Tumble Jar, Google Play için neredeyse hazır ve 14 gün boyunca Android test kullanıcılarına ihtiyacımız var. Ücretsiz, üç dokunuş sürüyor ve oyunun tamamını oynuyorsun.',
+      's1.t': 'Test grubuna katıl', 's1.d': 'Grubu aç ve <em>Gruba katıl</em>’a dokun. Play Store’dakiyle aynı Google hesabını kullan.', 's1.b': 'Grubu aç',
+      's2.t': 'Test kullanıcısı ol', 's2.d': 'Test sayfasını aç ve <em>Test kullanıcısı ol</em>’a dokun.', 's2.b': 'Test kullanıcısı ol',
+      's3.t': 'Tumble Jar’ı yükle', 's3.d': 'Android telefonuna Google Play’den yükle. Henüz görünmüyorsa birkaç dakika bekleyip tekrar dene.', 's3.b': 'Google Play’den yükle',
+      's4.t': '14 gün kal', 's4.d': 'Uygulamayı yüklü tut ve farklı günlerde birkaç oyun oyna. Google, oyunu ancak test kullanıcıları 14 gün art arda testte kalırsa yayınlamamıza izin veriyor.',
+      'fb.t': 'Ne düşündüğünü söyle', 'fb.d': 'Bir hata mı buldun ya da bir fikrin mi var? ' + MAIL + ' adresine yaz ya da test sayfasındaki <em>Geri bildirim gönder</em>’i kullan. Geri bildirimin doğrudan bir sonraki güncellemeye gider.',
+      'q.t': 'Sorular',
+      'q1': '<strong>Yükleme sayfası uygulamanın kullanılamadığını söylüyor.</strong> 1. ve 2. adımları Play Store’dakiyle aynı Google hesabıyla yaptığından emin ol, sonra birkaç dakika bekle.',
+      'q2': '<strong>iPhone?</strong> Tumble Jar şimdilik yalnızca Android’de.',
+      'q3': '<strong>Ayrılabilir miyim?</strong> Evet, istediğin zaman, test sayfasından. Asla şifre, ödeme veya kişisel bilgi istemeyiz.',
+      't.small': 'Tumble Jar anonim istatistikler ve çökme raporları toplar; bunları Ayarlar’dan kapatabilirsin. <a href="privacy">Gizlilik politikasına</a> bak (İngilizce).'
+    },
+    ja: {
+      'title.home': 'Aiplaz · 小さなモバイルゲーム', 'title.game': 'Tumble Jar · ボールを合体、水位をおさえよう', 'title.test': 'テストに参加 · Tumble Jar',
+      'nav.support': 'サポート', 'nav.privacy': 'プライバシー', 'ft.privacy': 'プライバシーポリシー', 'ft.delete': 'データの削除', 'ft.made': 'Tumble Jar の制作:', 'ft.contact': 'お問い合わせ:',
+      'badge.testing': 'Google Play でテスト中', 'btn.join': 'テストに参加', 'btn.about': 'ゲームについて',
+      'home.tagline': 'すぐに覚えられて、ていねいに作った小さなモバイルゲームを作っています。', 'home.games': 'ゲーム一覧',
+      'home.tj': '物理演算の合体ゲーム。数字のボールをビンに投げて同じ数字を合体させ、上がってくる水をおさえよう。',
+      'g.tagline': 'ボールを合体。水位をおさえよう。',
+      'g.lead': 'Tumble Jar は物理演算の合体ゲーム。画面いっぱいのビンに数字のボールを投げ入れ、同じ数字の2つを合体させて次の数字へ。2から4096まで。水位はどんどん上がり、水にふれた合体だけが水を蒸発させます。ビンがあふれる前に、しっかりねらおう。',
+      'g.cta': '発売前に遊ぼう:3タップでテストに参加。',
+      'f1.t': '指1本で', 'f1.d': 'ビンにふれて横にスライドしてねらい、指をはなして投げる。すばやくタップすると真下に落ちます。',
+      'f2.t': '同じボールが合体', 'f2.d': '2と2で4、4と4で8、そのまま4096まで。',
+      'f3.t': '水位は上がり続ける', 'f3.d': '水中での合体で水が少し蒸発。水中ですばやく合体すると沸騰して、ポイント2倍。',
+      'f4.t': 'ボムと石', 'f4.d': 'ボムは小さなボールを一掃。同じ場所に連打すると、ボールは消えない石になります。',
+      'f5.t': 'だんだん難しく', 'f5.d': 'スコアが上がるほどビンは荒れていきます。おだやか→ボム→波→大きなボール→嵐。',
+      'f6.t': 'モードはエンドレスのみ', 'f6.d': 'ビンがいっぱいになるまで遊んで、ベストスコアを更新しよう。統計はスマホの中だけに保存されます。',
+      'f7.t': '13言語、アカウント不要', 'f7.d': 'オフラインで遊べます。アカウントは不要です。',
+      't.h1': 'テストに参加', 't.tagline': 'だれよりも早く Tumble Jar を遊ぼう。',
+      't.lead': 'Tumble Jar はもうすぐ Google Play で公開予定。14日間テストしてくれる Android ユーザーを募集しています。無料で、3タップで参加でき、ゲームのすべてを遊べます。',
+      's1.t': 'テスターグループに参加', 's1.d': 'グループを開いて<em>グループに参加</em>をタップ。Play ストアと同じ Google アカウントを使ってください。', 's1.b': 'グループを開く',
+      's2.t': 'テスターになる', 's2.d': 'テストページを開いて<em>テスターになる</em>をタップ。', 's2.b': 'テスターになる',
+      's3.t': 'Tumble Jar をインストール', 's3.d': 'Android スマホに Google Play からインストール。まだ表示されないときは、数分待ってからもう一度お試しください。', 's3.b': 'Google Play でインストール',
+      's4.t': '14日間つづけて', 's4.d': 'アプリを入れたまま、ちがう日に何回か遊んでください。テスターが14日間つづけて参加しないと、Google が公開を許可してくれません。',
+      'fb.t': 'ご意見をお聞かせください', 'fb.d': 'バグを見つけた、アイデアがある? ' + MAIL + ' まで、またはテストページの<em>フィードバックを送信</em>から。いただいた声は次のアップデートに反映します。',
+      'q.t': 'よくある質問',
+      'q1': '<strong>インストールページに「利用できません」と出る。</strong>手順1と2を Play ストアと同じ Google アカウントで行ったか確認し、数分待ってください。',
+      'q2': '<strong>iPhone は?</strong>今のところ Tumble Jar は Android のみです。',
+      'q3': '<strong>やめられますか?</strong>はい、テストページからいつでも。パスワード、支払い、個人情報をおたずねすることはありません。',
+      't.small': 'Tumble Jar は匿名の統計とクラッシュレポートを収集します。設定でオフにできます。<a href="privacy">プライバシーポリシー</a>(英語)をご覧ください。'
+    },
+    ko: {
+      'title.home': 'Aiplaz · 작은 모바일 게임', 'title.game': 'Tumble Jar · 공을 합치고, 물을 막아요', 'title.test': '테스트 참여 · Tumble Jar',
+      'nav.support': '지원', 'nav.privacy': '개인정보', 'ft.privacy': '개인정보처리방침', 'ft.delete': '데이터 삭제', 'ft.made': 'Tumble Jar 제작:', 'ft.contact': '문의:',
+      'badge.testing': 'Google Play에서 테스트 중', 'btn.join': '테스트 참여', 'btn.about': '게임 소개',
+      'home.tagline': '배우기 쉽고 정성껏 만든 작은 모바일 게임을 만듭니다.', 'home.games': '우리 게임',
+      'home.tj': '물리 합치기 게임: 숫자 공을 병에 던져 같은 공을 합치고, 차오르는 물을 막아요.',
+      'g.tagline': '공을 합치고. 물을 막아요.',
+      'g.lead': 'Tumble Jar는 물리 합치기 게임이에요. 화면을 가득 채운 병에 숫자 공을 던지면 같은 공 두 개가 다음 숫자로 합쳐져요. 2부터 4096까지. 물은 계속 차오르고, 물에 닿은 합치기만 물을 증발시켜요. 병이 넘치기 전에 잘 조준하세요.',
+      'g.cta': '출시 전에 플레이하세요: 세 번의 탭으로 테스트에 참여.',
+      'f1.t': '손가락 하나로', 'f1.d': '병을 터치하고 옆으로 밀어 조준한 뒤 손가락을 떼면 던져요. 짧게 탭하면 공이 똑바로 떨어져요.',
+      'f2.t': '같은 공이 합쳐져요', 'f2.d': '2와 2는 4, 4와 4는 8, 이렇게 4096까지.',
+      'f3.t': '물이 계속 차올라요', 'f3.d': '물속에서 합치면 물이 조금 증발해요. 물속에서 빠르게 합치면 끓어올라 점수가 두 배.',
+      'f4.t': '폭탄과 돌', 'f4.d': '폭탄은 작은 공을 치워요. 같은 곳에 너무 빨리 던지면 공이 영원히 남는 돌이 돼요.',
+      'f5.t': '점점 어려워지는 레벨', 'f5.d': '점수가 높을수록 병이 거칠어져요: 잔잔함, 그다음 폭탄, 파도, 큰 공, 폭풍.',
+      'f6.t': '모드 하나: 무한', 'f6.d': '병이 가득 찰 때까지 플레이하고 최고 기록을 깨세요. 통계는 휴대폰에만 저장돼요.',
+      'f7.t': '13개 언어, 계정 불필요', 'f7.d': '오프라인으로도 즐길 수 있어요. 계정이 필요 없어요.',
+      't.h1': '테스트 참여', 't.tagline': '누구보다 먼저 Tumble Jar를 플레이하세요.',
+      't.lead': 'Tumble Jar가 곧 Google Play에 출시돼요. 14일 동안 테스트해 줄 Android 사용자가 필요해요. 무료이고, 세 번의 탭이면 되고, 게임 전체를 플레이할 수 있어요.',
+      's1.t': '테스터 그룹 가입', 's1.d': '그룹을 열고 <em>그룹 가입</em>을 탭하세요. Play 스토어와 같은 Google 계정을 사용하세요.', 's1.b': '그룹 열기',
+      's2.t': '테스터 되기', 's2.d': '테스트 페이지를 열고 <em>테스터 되기</em>를 탭하세요.', 's2.b': '테스터 되기',
+      's3.t': 'Tumble Jar 설치', 's3.d': 'Android 휴대폰에 Google Play에서 설치하세요. 아직 보이지 않으면 몇 분 기다린 뒤 다시 시도하세요.', 's3.b': 'Google Play에서 설치',
+      's4.t': '14일 동안 함께해요', 's4.d': '앱을 설치한 채로 여러 날에 걸쳐 몇 판 플레이해 주세요. 테스터가 14일 연속으로 테스트에 남아 있어야 Google이 출시를 허락해요.',
+      'fb.t': '의견을 들려주세요', 'fb.d': '버그를 찾았거나 아이디어가 있나요? ' + MAIL + ' 로 보내거나 테스트 페이지의 <em>의견 보내기</em>를 이용하세요. 보내주신 의견은 다음 업데이트에 바로 반영돼요.',
+      'q.t': '자주 묻는 질문',
+      'q1': '<strong>설치 페이지에 앱을 사용할 수 없다고 나와요.</strong> 1, 2단계를 Play 스토어와 같은 Google 계정으로 했는지 확인하고 몇 분 기다려 주세요.',
+      'q2': '<strong>iPhone은요?</strong> 지금은 Tumble Jar가 Android 전용이에요.',
+      'q3': '<strong>그만둘 수 있나요?</strong> 네, 언제든지 테스트 페이지에서요. 비밀번호, 결제, 개인정보는 절대 요청하지 않아요.',
+      't.small': 'Tumble Jar는 익명 통계와 오류 보고서를 수집하며, 설정에서 끌 수 있어요. <a href="privacy">개인정보처리방침</a>(영어)을 확인하세요.'
+    },
+    'zh-Hans': {
+      'title.home': 'Aiplaz · 小巧的手机游戏', 'title.game': 'Tumble Jar · 合成小球，压住水位', 'title.test': '参加测试 · Tumble Jar',
+      'nav.support': '支持', 'nav.privacy': '隐私', 'ft.privacy': '隐私政策', 'ft.delete': '删除你的数据', 'ft.made': 'Tumble Jar 出品方：', 'ft.contact': '联系：',
+      'badge.testing': '正在 Google Play 测试', 'btn.join': '参加测试', 'btn.about': '关于游戏',
+      'home.tagline': '我们制作小巧的手机游戏：上手快，用心做。', 'home.games': '我们的游戏',
+      'home.tj': '一款物理合成游戏：把数字球扔进罐子，合成相同的球，压住不断上涨的水位。',
+      'g.tagline': '合成小球，压住水位。',
+      'g.lead': 'Tumble Jar 是一款物理合成游戏。把数字球扔进占满整个屏幕的罐子：两个相同的球合成下一个数字，从 2 一路到 4096。水位不断上涨，只有碰到水的合成才能蒸发掉一部分水，所以在罐子被淹没前要瞄准好。',
+      'g.cta': '上线前抢先玩：三步加入测试。',
+      'f1.t': '一根手指', 'f1.d': '按住罐子，左右滑动瞄准，松手投出。快速轻点，球会直直落下。',
+      'f2.t': '相同的球会合成', 'f2.d': '2 和 2 合成 4，4 和 4 合成 8，一直到 4096。',
+      'f3.t': '水位不断上涨', 'f3.d': '在水中合成会蒸发一部分水。在水中合成得够快，水就会沸腾：得分翻倍。',
+      'f4.t': '炸弹和石头', 'f4.d': '炸弹会清掉小球。在同一个地方扔得太快，球会变成永远不会消失的石头。',
+      'f5.t': '关卡越来越难', 'f5.d': '分数越高，罐子越疯狂：先是平静，然后是炸弹、波浪、大球和风暴。',
+      'f6.t': '一个模式：无尽', 'f6.d': '一直玩到罐子满了，刷新你的最高分。统计数据只保存在你的手机上。',
+      'f7.t': '13 种语言，无需账号', 'f7.d': '可离线游玩，无需账号。',
+      't.h1': '参加测试', 't.tagline': '比所有人更早玩到 Tumble Jar。',
+      't.lead': 'Tumble Jar 即将登陆 Google Play，我们需要 Android 用户帮忙测试 14 天。完全免费，只需三步，就能玩到完整游戏。',
+      's1.t': '加入测试者群组', 's1.d': '打开群组并点按<em>加入群组</em>。请使用与 Play 商店相同的 Google 账号。', 's1.b': '打开群组',
+      's2.t': '成为测试人员', 's2.d': '打开测试页面并点按<em>成为测试人员</em>。', 's2.b': '成为测试人员',
+      's3.t': '安装 Tumble Jar', 's3.d': '在你的 Android 手机上从 Google Play 安装。如果还没出现，请等几分钟再试。', 's3.b': '从 Google Play 安装',
+      's4.t': '坚持 14 天', 's4.d': '请保留应用，并在不同的日子玩几局。只有测试者连续 14 天留在测试中，Google 才允许我们上线。',
+      'fb.t': '告诉我们你的想法', 'fb.d': '发现了问题或有好点子？请写信到 ' + MAIL + '，或在测试页面使用<em>发送反馈</em>。你的反馈会直接进入下一次更新。',
+      'q.t': '常见问题',
+      'q1': '<strong>安装页面显示应用不可用。</strong>请确认你用与 Play 商店相同的 Google 账号完成了第 1 步和第 2 步，然后等几分钟。',
+      'q2': '<strong>iPhone 呢？</strong>目前 Tumble Jar 只支持 Android。',
+      'q3': '<strong>可以退出吗？</strong>可以，随时在测试页面退出。我们绝不会索要密码、付款或个人信息。',
+      't.small': 'Tumble Jar 会收集匿名统计和崩溃报告，你可以在设置中关闭。请参阅<a href="privacy">隐私政策</a>（英文）。'
+    }
+  };
+
+  var codes = LANGS.map(function (l) { return l[0]; });
+  function pick() {
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q && T[q]) return q;
+    try { var s = localStorage.getItem('aiplaz-lang'); if (s && T[s]) return s; } catch (e) {}
+    var prefs = navigator.languages || [navigator.language || 'en'];
+    for (var i = 0; i < prefs.length; i++) {
+      var p = (prefs[i] || '').toLowerCase();
+      if (p.indexOf('zh') === 0) return 'zh-Hans';
+      if (p === 'pt-br' || p.indexOf('pt') === 0) return 'pt-BR';
+      var base = p.split('-')[0];
+      if (T[base]) return base;
+    }
+    return 'en';
+  }
+  function apply(lang) {
+    var d = T[lang] || T.en, en = T.en;
+    document.documentElement.lang = lang;
+    var tk = document.documentElement.getAttribute('data-title-key');
+    if (tk) document.title = d[tk] || en[tk] || document.title;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n'); var v = d[k] || en[k]; if (v) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-html'); var v = d[k] || en[k]; if (v) el.innerHTML = v;
+    });
+    document.querySelectorAll('select.lang-select').forEach(function (s) { s.value = lang; });
+    document.querySelectorAll('a[data-keep-lang]').forEach(function (a) {
+      var u = new URL(a.getAttribute('href'), location.href);
+      if (lang === 'en') u.searchParams.delete('lang'); else u.searchParams.set('lang', lang);
+      a.href = u.pathname + u.search;
+    });
+  }
+  function build() {
+    document.querySelectorAll('.lang-slot').forEach(function (slot) {
+      var s = document.createElement('select');
+      s.className = 'lang-select';
+      s.setAttribute('aria-label', 'Language');
+      LANGS.forEach(function (l) { var o = document.createElement('option'); o.value = l[0]; o.textContent = l[1]; s.appendChild(o); });
+      s.addEventListener('change', function () {
+        try { localStorage.setItem('aiplaz-lang', s.value); } catch (e) {}
+        apply(s.value);
+      });
+      slot.appendChild(s);
+    });
+    apply(pick());
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+})();

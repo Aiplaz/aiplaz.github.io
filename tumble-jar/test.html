@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-title-key="title.test">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -63,14 +63,6 @@
         text-align: center;
         margin-top: 16px;
       }
-      .ro {
-        color: var(--ink-2);
-        font-size: 15px;
-      }
-      .lead .ro {
-        display: block;
-        margin-top: 6px;
-      }
       .small {
         color: var(--ink-2);
         font-size: 15px;
@@ -81,7 +73,7 @@
     <div class="wrap">
       <header class="top">
         <a class="brand" href="./"><img src="icon.png" width="40" height="40" alt="" />Tumble Jar</a>
-        <nav><a href="support">Support</a><a href="privacy">Privacy</a></nav>
+        <nav><a href="support" data-i18n="nav.support">Support</a><a href="privacy" data-i18n="nav.privacy">Privacy</a><span class="lang-slot"></span></nav>
       </header>
     </div>
 
@@ -89,76 +81,57 @@
       <div class="hero">
         <img class="app-icon" src="icon.png" width="128" height="128" alt="Tumble Jar icon: a jar with the balls 2, 4 and 8 in rising water" />
         <div>
-          <h1>Join the test</h1>
-          <p class="tagline">Play Tumble Jar before everyone else.</p>
+          <h1 data-i18n="t.h1">Join the test</h1>
+          <p class="tagline" data-i18n="t.tagline">Play Tumble Jar before everyone else.</p>
         </div>
       </div>
 
-      <p class="lead">
-        Tumble Jar is almost ready for Google Play, and we need testers on Android for 14 days. It's free, it takes three
-        taps, and you play the full game.
-        <span class="ro" lang="ro">Ajută-ne să testăm Tumble Jar pe Android timp de 14 zile. E gratuit și durează trei atingeri.</span>
-      </p>
+      <p class="lead" data-i18n="t.lead">Tumble Jar is almost ready for Google Play, and we need testers on Android for 14 days. It’s free, it takes three taps, and you play the full game.</p>
 
       <ol class="join-steps">
         <li class="card step">
-          <div class="step-head"><span class="ball" aria-hidden="true">1</span><h3>Join the testers group</h3></div>
-          <p>Open the group and tap <em>Join group</em>. Use the same Google account as your Play Store.</p>
-          <p class="ro" lang="ro">Intră în grup și apasă „Alătură-te grupului”, cu același cont Google ca în Magazin Play.</p>
-          <a class="btn primary wide" href="https://groups.google.com/g/aiplaz" target="_blank" rel="noopener">Join the group</a>
+          <div class="step-head"><span class="ball" aria-hidden="true">1</span><h3 data-i18n="s1.t">Join the testers group</h3></div>
+          <p data-i18n-html="s1.d">Open the group and tap <em>Join group</em>. Use the same Google account as your Play Store.</p>
+          <a class="btn primary wide" href="https://groups.google.com/g/aiplaz" target="_blank" rel="noopener" data-i18n="s1.b">Join the group</a>
         </li>
         <li class="card step">
-          <div class="step-head"><span class="ball b4" aria-hidden="true">2</span><h3>Become a tester</h3></div>
-          <p>Open the test page and tap <em>Become a tester</em>.</p>
-          <p class="ro" lang="ro">Deschide pagina testului și apasă „Devino tester”.</p>
-          <a class="btn primary wide" href="https://play.google.com/apps/testing/com.aiplaz.tumblejar" target="_blank" rel="noopener">Become a tester</a>
+          <div class="step-head"><span class="ball b4" aria-hidden="true">2</span><h3 data-i18n="s2.t">Become a tester</h3></div>
+          <p data-i18n-html="s2.d">Open the test page and tap <em>Become a tester</em>.</p>
+          <a class="btn primary wide" href="https://play.google.com/apps/testing/com.aiplaz.tumblejar" target="_blank" rel="noopener" data-i18n="s2.b">Become a tester</a>
         </li>
         <li class="card step">
-          <div class="step-head"><span class="ball b8" aria-hidden="true">3</span><h3>Install Tumble Jar</h3></div>
-          <p>Install it from Google Play on your Android phone. If it doesn't show yet, wait a few minutes and try again.</p>
-          <p class="ro" lang="ro">Instalează jocul din Google Play. Dacă nu apare încă, mai așteaptă câteva minute.</p>
-          <a class="btn primary wide" href="https://play.google.com/store/apps/details?id=com.aiplaz.tumblejar" target="_blank" rel="noopener">Install from Google Play</a>
+          <div class="step-head"><span class="ball b8" aria-hidden="true">3</span><h3 data-i18n="s3.t">Install Tumble Jar</h3></div>
+          <p data-i18n="s3.d">Install it from Google Play on your Android phone. If it doesn’t show yet, wait a few minutes and try again.</p>
+          <a class="btn primary wide" href="https://play.google.com/store/apps/details?id=com.aiplaz.tumblejar" target="_blank" rel="noopener" data-i18n="s3.b">Install from Google Play</a>
         </li>
       </ol>
 
       <div class="card step note">
-        <div class="step-head"><span class="ball b16" aria-hidden="true">14</span><h3>Stay for 14 days</h3></div>
-        <p>Keep the app installed and play a few games on different days. Google only lets us launch after testers stay in the test for 14 days in a row.</p>
-        <p class="ro" lang="ro">Păstrează jocul instalat 14 zile și joacă din când în când, în zile diferite.</p>
+        <div class="step-head"><span class="ball b16" aria-hidden="true">14</span><h3 data-i18n="s4.t">Stay for 14 days</h3></div>
+        <p data-i18n="s4.d">Keep the app installed and play a few games on different days. Google only lets us launch after testers stay in the test for 14 days in a row.</p>
       </div>
 
-      <h2>Tell us what you think</h2>
-      <p>
-        Found a bug or have an idea? Write to <a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a>, or use
-        <em>Send feedback</em> on the test page. Your feedback goes straight into the next update.
-      </p>
+      <h2 data-i18n="fb.t">Tell us what you think</h2>
+      <p data-i18n-html="fb.d">Found a bug or have an idea? Write to <a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a>, or use <em>Send feedback</em> on the test page. Your feedback goes straight into the next update.</p>
 
-      <h2>Questions</h2>
-      <p>
-        <strong>The install page says the app isn't available.</strong> Make sure you finished steps 1 and 2 with the same
-        Google account as your Play Store, then wait a few minutes.
-      </p>
-      <p><strong>iPhone?</strong> Tumble Jar is Android only for now.</p>
-      <p>
-        <strong>Can I leave?</strong> Yes, at any time, on the test page. We never ask for passwords, payment or personal
-        details.
-      </p>
-      <p class="small">
-        Tumble Jar collects anonymous statistics and crash reports, which you can turn off in Settings. See the
-        <a href="privacy">privacy policy</a>.
-      </p>
+      <h2 data-i18n="q.t">Questions</h2>
+      <p data-i18n-html="q1"><strong>The install page says the app isn’t available.</strong> Make sure you finished steps 1 and 2 with the same Google account as your Play Store, then wait a few minutes.</p>
+      <p data-i18n-html="q2"><strong>iPhone?</strong> Tumble Jar is Android only for now.</p>
+      <p data-i18n-html="q3"><strong>Can I leave?</strong> Yes, at any time, on the test page. We never ask for passwords, payment or personal details.</p>
+      <p class="small" data-i18n-html="t.small">Tumble Jar collects anonymous statistics and crash reports, which you can turn off in Settings. See the <a href="privacy">privacy policy</a>.</p>
     </main>
 
     <footer class="water">
       <div class="wrap">
         <nav aria-label="Tumble Jar">
-          <a href="./">Tumble Jar</a>
-          <a href="support">Support</a>
-          <a href="privacy">Privacy policy</a>
-          <a href="delete-data">Delete your data</a>
+          <a href="./" data-keep-lang>Tumble Jar</a>
+          <a href="support" data-i18n="nav.support">Support</a>
+          <a href="privacy" data-i18n="ft.privacy">Privacy policy</a>
+          <a href="delete-data" data-i18n="ft.delete">Delete your data</a>
         </nav>
-        <p>Tumble Jar is made by <a href="../">Aiplaz</a> · <a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
+        <p><span data-i18n="ft.made">Tumble Jar is made by</span> <a href="../" data-keep-lang>Aiplaz</a> · <a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
       </div>
     </footer>
+    <script src="../i18n.js"></script>
   </body>
 </html>
