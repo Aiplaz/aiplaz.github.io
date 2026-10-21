@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://aiplaz.github.io/tumble-jar/" />
     <meta property="og:site_name" content="Aiplaz" />
     <meta property="og:title" content="Tumble Jar" />
-    <meta property="og:description" content="Merge the balls. Keep the water down. A physics merge game, coming soon to Google Play." />
+    <meta property="og:description" content="Merge the balls. Keep the water down. A physics merge game, now in testing on Google Play." />
     <meta property="og:image" content="https://aiplaz.github.io/tumble-jar/og.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -28,6 +28,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../style.css" />
+    <style>
+      .cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 18px 20px;
+      }
+      .cta p {
+        margin: 10px 0 0;
+      }
+    </style>
   </head>
   <body>
     <div class="wrap">
@@ -51,7 +64,13 @@
         merge into the next number, from 2 all the way up to 4096. The water keeps rising, and only a merge that touches
         it boils some away, so aim well before the jar floods.
       </p>
-      <p><span class="badge">Coming soon to Google Play</span></p>
+      <div class="card cta">
+        <div>
+          <span class="badge">In testing on Google Play</span>
+          <p>Play it before launch: join the test in three taps.</p>
+        </div>
+        <a class="btn primary" href="test">Join the test</a>
+      </div>
 
       <div class="card">
         <ul class="features">
@@ -81,7 +100,7 @@
           </li>
           <li>
             <span class="ball b128" aria-hidden="true">128</span>
-            <span><strong>13 languages, no ads</strong>No ads and no in-app purchases. No account needed.</span>
+            <span><strong>13 languages, no account</strong>Plays offline. No account needed.</span>
           </li>
         </ul>
       </div>
