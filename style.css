@@ -465,6 +465,9 @@ footer.water nav {
   gap: 4px 18px;
   font-weight: 600;
 }
+footer.water nav.social {
+  margin-top: 4px;
+}
 footer.water p {
   margin: 6px 0 0;
   opacity: 0.85;
