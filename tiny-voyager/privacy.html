@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Privacy Policy · Tiny Voyager</title>
     <meta name="description" content="What Tiny Voyager stores, what the ads and the statistics collect, and how to turn them off." />
-    <link rel="icon" href="favicon.png" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#E7EEF4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0E141B" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://aiplaz.github.io/tiny-voyager/privacy" />
+    <link rel="alternate" hreflang="en" href="https://aiplaz.github.io/tiny-voyager/privacy" />
+    <link rel="alternate" hreflang="ro" href="https://aiplaz.github.io/tiny-voyager/privacy-ro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aiplaz.github.io/tiny-voyager/privacy" />
+    <meta property="og:site_name" content="Aiplaz" />
+    <meta property="og:title" content="Tiny Voyager · Privacy policy" />
+    <meta property="og:description" content="No accounts. Rewarded ads from Google AdMob only when you choose. Anonymous statistics and crash reports, off with one switch." />
+    <meta property="og:image" content="https://aiplaz.github.io/tiny-voyager/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;600&family=Oswald:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Figtree:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <div class="wrap">
       <header class="top">
-        <img src="icon.png" alt="" />
-        <a href="./">Tiny Voyager</a>
-        <nav><a href="support">Support</a><a href="privacy-ro" hreflang="ro">Română</a></nav>
+        <a class="brand" href="./"><img src="icon.png" width="40" height="40" alt="" />Tiny Voyager</a>
+        <nav><a href="support">Support</a><a href="privacy-ro" hreflang="ro" lang="ro">Română</a></nav>
       </header>
+    </div>
 
-      <h1><span class="misprint" data-t="Privacy policy">Privacy policy</span></h1>
+    <main class="wrap">
+      <h1>Privacy policy</h1>
       <p class="meta">Tiny Voyager (iOS and Android) · last updated 31 October 2026</p>
 
       <div class="card">
@@ -125,9 +139,9 @@
       <div class="scroll">
         <table>
           <tr>
-            <th>What</th>
-            <th>Why</th>
-            <th>Legal basis (GDPR)</th>
+            <th scope="col">What</th>
+            <th scope="col">Why</th>
+            <th scope="col">Legal basis (GDPR)</th>
           </tr>
           <tr>
             <td>Progress on your phone</td>
@@ -178,8 +192,24 @@
 
       <h2>Contact</h2>
       <p>Nicolae Sirghi · <a href="mailto:tinyvoyager.games@gmail.com">tinyvoyager.games@gmail.com</a></p>
+    </main>
 
-      <footer><a href="./">Tiny Voyager</a> · <a href="support">Support</a> · <a href="privacy-ro" hreflang="ro">Politica de confidențialitate în română</a></footer>
-    </div>
+    <footer class="water">
+      <div class="wrap">
+        <nav aria-label="Tiny Voyager">
+          <a href="./">Tiny Voyager</a>
+          <a href="support">Support</a>
+          <a href="delete-data">Delete your data</a>
+          <a href="privacy-ro" hreflang="ro" lang="ro">Politica de confidențialitate în română</a>
+        </nav>
+        <nav class="social" aria-label="Aiplaz">
+          <a href="../">Aiplaz</a>
+          <a href="https://discord.gg/FXNYgRTFf" data-track="discord">Discord</a>
+          <a href="https://www.youtube.com/@aiplaz_games" data-track="youtube">YouTube</a>
+          <a href="https://www.tiktok.com/@aiplaz" data-track="tiktok">TikTok</a>
+        </nav>
+        <p>Tiny Voyager is made by Nicolae Sirghi · <a href="mailto:tinyvoyager.games@gmail.com">tinyvoyager.games@gmail.com</a></p>
+      </div>
+    </footer>
   </body>
 </html>
