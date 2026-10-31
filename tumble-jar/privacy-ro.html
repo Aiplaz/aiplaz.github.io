@@ -38,7 +38,7 @@
 
     <main class="wrap">
       <h1>Politica de confidențialitate</h1>
-      <p class="meta">Tumble Jar pentru Android și iOS · actualizată la 28 octombrie 2026</p>
+      <p class="meta">Tumble Jar pentru Android și iOS · actualizată la 31 octombrie 2026</p>
 
       <div class="card">
         <p><strong>Pe scurt:</strong></p>
@@ -47,7 +47,7 @@
           <li>Nu există reclame și nici cumpărături în aplicație.</li>
           <li>Setările și statisticile tale rămân pe telefon.</li>
           <li>
-            Jocul trimite statistici anonime de joc (PostHog) și rapoarte de erori (Sentry), ca să poată fi îmbunătățit.
+            Jocul trimite statistici anonime de joc și rapoarte de erori (ambele la PostHog), ca să poată fi îmbunătățit.
             Un singur buton le oprește pe amândouă: Setări → Statistici anonime.
           </li>
           <li>Nimic nu se vinde.</li>
@@ -114,16 +114,20 @@
         aproximativă.
       </p>
 
-      <h2>Rapoarte de erori: Sentry</h2>
+      <h2>Rapoarte de erori: PostHog</h2>
       <p>
-        Când jocul se blochează, îngheață sau dă de o eroare, un raport ajunge la Sentry, un serviciu de monitorizare a
-        erorilor, pe serverele sale din Uniunea Europeană (Frankfurt, Germania). Raportul conține mesajul tehnic al
-        erorii și locul din cod unde a apărut, ultimii pași tehnici dinaintea ei (de exemplu ce ecran era deschis),
-        versiunea aplicației, modelul dispozitivului, sistemul de operare și versiunea lui, limba, memoria și spațiul
-        liber. Nu conține nume, e-mail, identificatorul de publicitate sau capturi de ecran, iar adresa IP nu se
-        păstrează. Rapoartele se păstrează cel mult 90 de zile. Același buton le oprește:
-        <strong>Setări → Statistici anonime</strong>. Politica de confidențialitate Sentry:
-        <a href="https://sentry.io/privacy/">sentry.io/privacy</a>.
+        Când jocul se blochează sau dă de o eroare, un raport ajunge la PostHog, împreună cu statisticile, pe serverele
+        sale din Uniunea Europeană (Frankfurt, Germania). Raportul conține mesajul tehnic al erorii și locul din cod unde
+        a apărut, versiunea aplicației, modelul dispozitivului, sistemul de operare și versiunea lui și limba, cu același
+        identificator aleatoriu al instalării. Nu conține nume, e-mail, identificatorul de publicitate sau capturi de
+        ecran, iar adresa IP nu se păstrează. Rapoartele se păstrează ca statisticile, cel mult 24 de luni. Același buton
+        le oprește: <strong>Setări → Statistici anonime</strong>.
+      </p>
+      <p>
+        Versiunile jocului lansate înainte de noiembrie 2026 trimit rapoartele de erori la Sentry, un serviciu de
+        monitorizare a erorilor, pe serverele sale din Uniunea Europeană (Frankfurt, Germania), cu același fel de
+        conținut, plus ultimii pași tehnici dinaintea erorii și memoria și spațiul liber; acele rapoarte se păstrează cel
+        mult 90 de zile. Politica de confidențialitate Sentry: <a href="https://sentry.io/privacy/">sentry.io/privacy</a>.
       </p>
 
       <h2>De ce (temeiuri legale)</h2>
@@ -152,7 +156,8 @@
 
       <h2>Cine primește date</h2>
       <p>
-        Doar PostHog (statistici) și Sentry (rapoarte de erori), cum e descris mai sus. Sentry poate prelucra date în
+        Doar PostHog (statistici și rapoarte de erori), plus Sentry pentru rapoartele de erori din versiunile lansate
+        înainte de noiembrie 2026, cum e descris mai sus. Sentry poate prelucra date în
         afara Spațiului Economic European, cu protecția oferită de Cadrul UE–SUA privind protecția datelor și de clauzele
         contractuale standard ale Comisiei Europene. Nu vindem și nu închiriem date nimănui.
       </p>

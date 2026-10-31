@@ -37,7 +37,7 @@
 
     <main class="wrap">
       <h1>Privacy policy</h1>
-      <p class="meta">Tumble Jar for Android and iOS · last updated 28 October 2026</p>
+      <p class="meta">Tumble Jar for Android and iOS · last updated 31 October 2026</p>
 
       <div class="card">
         <p><strong>In short:</strong></p>
@@ -46,7 +46,7 @@
           <li>There are no ads and no in-app purchases.</li>
           <li>Your settings and statistics stay on your phone.</li>
           <li>
-            The game sends anonymous play statistics (PostHog) and crash reports (Sentry) so it can be improved. One
+            The game sends anonymous play statistics and crash reports (both to PostHog) so it can be improved. One
             switch turns both off: Settings → Anonymous statistics.
           </li>
           <li>Nothing is sold.</li>
@@ -111,14 +111,19 @@
         the approximate country.
       </p>
 
-      <h2>Crash reports: Sentry</h2>
+      <h2>Crash reports: PostHog</h2>
       <p>
-        When the game crashes, freezes or hits an error, a report goes to Sentry, an error monitoring service, on its
-        servers in the European Union (Frankfurt, Germany). A report contains the technical error message and where in
-        the code it happened, the last technical steps before it (for example which screen was open), the app version,
-        the device model, the operating system and its version, the language, and the free memory and storage. It
-        contains no name, e-mail, advertising identifier or screenshot, and the IP address is not stored. Reports are
-        kept for at most 90 days. The same switch turns them off: <strong>Settings → Anonymous statistics</strong>.
+        When the game crashes or hits an error, a report goes to PostHog, together with the statistics, on its servers
+        in the European Union (Frankfurt, Germany). A report contains the technical error message and where in the code
+        it happened, the app version, the device model, the operating system and its version and the language, with the
+        same random installation identifier. It contains no name, e-mail, advertising identifier or screenshot, and the
+        IP address is not stored. Reports are kept like the statistics, for at most 24 months. The same switch turns
+        them off: <strong>Settings → Anonymous statistics</strong>.
+      </p>
+      <p>
+        Builds of the game released before November 2026 send crash reports to Sentry instead, an error monitoring
+        service, on its servers in the European Union (Frankfurt, Germany), with the same kind of content plus the last
+        technical steps before the error and the free memory and storage; those reports are kept for at most 90 days.
         Sentry's privacy policy: <a href="https://sentry.io/privacy/">sentry.io/privacy</a>.
       </p>
 
@@ -147,7 +152,8 @@
 
       <h2>Who receives data</h2>
       <p>
-        Only PostHog (statistics) and Sentry (crash reports), as described above. Sentry may process data outside the
+        Only PostHog (statistics and crash reports), plus Sentry for crash reports from builds released before November
+        2026, as described above. Sentry may process data outside the
         European Economic Area, protected by the EU–US Data Privacy Framework and the European Commission's standard
         contractual clauses. We do not sell or rent data to anyone.
       </p>
