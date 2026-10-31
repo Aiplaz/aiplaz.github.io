@@ -29,14 +29,6 @@
     />
     <link rel="stylesheet" href="../style.css" />
     <style>
-      .shot {
-        display: block;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1200 / 630;
-        border-radius: 18px;
-        margin: 28px 0 8px;
-      }
       .tv-mark {
         flex: none;
         display: inline-grid;
@@ -69,23 +61,47 @@
           <div class="band-body">
             <h1 class="game-name">Tiny Voyager</h1>
             <p class="tagline">One touch, five worlds</p>
-            <span class="badge">Coming soon to the App Store and Google Play</span>
+            <span class="badge">In testing on Google Play</span>
           </div>
         </div>
       </section>
 
       <div class="wrap content">
       <p class="lead">
-        Hold to fly right, let go to fly left. Climb through the sky into space, fall through a black hole into the
-        deep and race the lava. 30 levels, an endless mode and a new daily route every day.
+        Slide to steer: touch anywhere and the little robot flies to your finger. Climb through the sky into space,
+        fall through a black hole into the deep and race the lava. 30 levels, an endless mode and a new daily route
+        every day.
       </p>
 
-      <img class="shot" src="og.jpg" width="1200" height="630" alt="Tiny Voyager: the little robot flies along a trail of stars above a purple planet, next to six robots in other costumes." />
+      <section class="reel" aria-labelledby="see">
+        <h2 id="see">See it fly</h2>
+        <div class="reel-in">
+          <figure class="reel-video">
+            <div class="screen">
+              <video src="media/gameplay.mp4" poster="media/gameplay-poster.jpg" width="540" height="1200" autoplay muted loop playsinline preload="metadata" aria-describedby="reel-cap"></video>
+              <script>(function (v) { if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.preload = 'none'; v.closest('.reel').classList.add('is-paused'); } })(document.currentScript.previousElementSibling);</script>
+              <button class="reel-toggle" type="button" hidden><span class="sr-only if-playing">Pause the video</span><span class="sr-only if-paused">Play the video</span></button>
+            </div>
+            <figcaption id="reel-cap">14 seconds of a run: through space, into a black hole and out in the deep.</figcaption>
+          </figure>
+          <div class="reel-shots">
+            <ul class="shots">
+              <li><a href="media/shot-1.jpg"><img src="media/shot-1-sm.jpg" srcset="media/shot-1-sm.jpg 360w, media/shot-1.jpg 720w" sizes="150px" width="360" height="800" loading="lazy" decoding="async" alt="The field at sunset: the little robot follows a trail of stars, with the hint slide to steer at the bottom." /></a></li>
+              <li><a href="media/shot-2.jpg"><img src="media/shot-2-sm.jpg" srcset="media/shot-2-sm.jpg 360w, media/shot-2.jpg 720w" sizes="150px" width="360" height="800" loading="lazy" decoding="async" alt="The stormy sky: the robot weaves between storm clouds and a flash of lightning for a close call." /></a></li>
+              <li><a href="media/shot-3.jpg"><img src="media/shot-3-sm.jpg" srcset="media/shot-3-sm.jpg 360w, media/shot-3.jpg 720w" sizes="150px" width="360" height="800" loading="lazy" decoding="async" alt="Space: a trail of stars curves past asteroids and a ringed planet." /></a></li>
+              <li><a href="media/shot-4.jpg"><img src="media/shot-4-sm.jpg" srcset="media/shot-4-sm.jpg 360w, media/shot-4.jpg 720w" sizes="150px" width="360" height="800" loading="lazy" decoding="async" alt="The deep: the robot swims through green water past rows of sea urchins." /></a></li>
+              <li><a href="media/shot-5.jpg"><img src="media/shot-5-sm.jpg" srcset="media/shot-5-sm.jpg 360w, media/shot-5.jpg 720w" sizes="150px" width="360" height="800" loading="lazy" decoding="async" alt="The lava world: fireballs fly over glowing volcanoes." /></a></li>
+              <li><a href="media/shot-6.jpg"><img src="media/shot-6-sm.jpg" srcset="media/shot-6-sm.jpg 360w, media/shot-6.jpg 720w" sizes="150px" width="360" height="800" loading="lazy" decoding="async" alt="The menu: a big yellow Play button, with Levels, Endless and Daily below the flying robot." /></a></li>
+            </ul>
+            <p class="small">Tap a screenshot to see it full size.</p>
+          </div>
+        </div>
+      </section>
 
       <ul class="features">
           <li>
             <span class="tv-mark" aria-hidden="true">1</span>
-            <span><strong>One touch</strong>Hold anywhere on the screen to fly right, let go to fly left. Collect stars, dodge everything else.</span>
+            <span><strong>One touch</strong>Touch anywhere and slide: the robot flies to your finger and stops under it. Lift your finger and it stays put. Collect stars, dodge everything else.</span>
           </li>
           <li>
             <span class="tv-mark" aria-hidden="true">5</span>
@@ -131,5 +147,6 @@
       </div>
     </footer>
     <script src="../i18n.js"></script>
+    <script src="../reel.js" defer></script>
   </body>
 </html>

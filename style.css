@@ -3,7 +3,8 @@
    display and Figtree for reading. Each game brings its own world as a full-width band in its colour with one
    small shape from the game: Tumble Jar's water line, Flip Troupe's bunting, Tiny Voyager's stars. The sun
    yellow of the merge balls and the bunting is the one action colour ("Join the test").
-   One motion only: on the home page the three icons drop into their bands once (none with reduced motion). */
+   Motion: on the home page the three icons drop into their bands once; each game page has a short muted gameplay
+   video with a pause button. With reduced motion neither moves on its own (the video waits on its poster). */
 :root {
   color-scheme: light dark;
   --paper: #eef0f7;
@@ -535,6 +536,178 @@ li::marker {
 }
 .back:hover span {
   text-decoration: underline;
+}
+
+/* Game pages: the gameplay reel. The video sits in a phone screen whose bezel is the game's world colour; the
+   screenshots are a swipeable strip on phones and a grid beside the video on wide screens. Each opens full size. */
+.content > .reel {
+  max-width: none;
+}
+.reel {
+  margin: 40px 0 32px;
+}
+.content .reel h2 {
+  margin: 0 0 20px;
+}
+.reel-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 26px;
+  justify-items: center;
+}
+.reel-video {
+  margin: 0;
+  width: min(100%, 288px);
+}
+.screen {
+  position: relative;
+  padding: 7px;
+  border-radius: 36px;
+  background: var(--world);
+  box-shadow: 0 0 0 1px var(--world-line), 0 24px 34px -22px rgba(16, 12, 52, 0.6);
+}
+.screen video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 540 / 1200;
+  object-fit: cover;
+  border-radius: 29px;
+  background: var(--world-soft);
+}
+.reel-video figcaption {
+  margin: 14px auto 0;
+  max-width: 30ch;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: center;
+}
+/* One control: a small pause button while it plays, the sun-yellow play button when it is paused */
+.reel-toggle {
+  position: absolute;
+  right: 17px;
+  bottom: 17px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(20, 17, 48, 0.55);
+  color: #fff;
+  cursor: pointer;
+}
+.reel-toggle[hidden] {
+  display: none;
+}
+.reel-toggle::before {
+  content: '';
+  width: 14px;
+  height: 16px;
+  background: linear-gradient(90deg, currentColor 0 5px, transparent 5px 9px, currentColor 9px);
+}
+.reel-toggle:hover {
+  background: rgba(20, 17, 48, 0.75);
+}
+.reel.is-paused .reel-toggle {
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  width: 76px;
+  height: 76px;
+  background: var(--sun);
+  color: var(--sun-ink);
+  box-shadow: 0 5px 0 var(--sun-edge), 0 16px 26px -10px rgba(16, 12, 52, 0.6);
+}
+.reel.is-paused .reel-toggle::before {
+  width: 0;
+  height: 0;
+  margin-left: 7px;
+  background: none;
+  border-style: solid;
+  border-width: 14px 0 14px 23px;
+  border-color: transparent transparent transparent currentColor;
+}
+.reel-toggle .if-paused,
+.reel.is-paused .reel-toggle .if-playing {
+  display: none;
+}
+.reel.is-paused .reel-toggle .if-paused {
+  display: inline;
+}
+.reel-shots {
+  width: 100%;
+  min-width: 0;
+}
+.shots {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 150px;
+  gap: 12px;
+  margin: 0 -20px;
+  padding: 4px 20px 14px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--world-line) transparent;
+}
+.shots li {
+  margin: 0;
+  scroll-snap-align: start;
+}
+.shots a {
+  display: block;
+  border-radius: 16px;
+}
+.shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  background: var(--world-soft);
+  box-shadow: 0 0 0 1px var(--world-line);
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .shots img {
+    transition: transform 0.18s ease-out;
+  }
+  .shots a:hover img {
+    transform: translateY(-4px);
+  }
+}
+.reel-shots .small {
+  margin: 4px 0 0;
+}
+@media (min-width: 640px) {
+  .shots {
+    margin: 0 -32px;
+    padding: 4px 32px 14px;
+    scroll-padding: 0 32px;
+  }
+}
+@media (min-width: 800px) {
+  .reel-in {
+    grid-template-columns: 288px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+    justify-items: stretch;
+  }
+  .shots {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+  .reel-shots .small {
+    margin-top: 14px;
+  }
 }
 
 /* Feature list (Tumble Jar: the merge balls 2, 4, 8 … are the markers) */

@@ -43,6 +43,30 @@
           Launch Teo, Stella, Tiny and Pip off the seesaw, pop the balloons and keep the show going. Drop them on their
           heads and the grumpy boss storms in.
         </p>
+        <section class="reel" aria-labelledby="see">
+          <h2 id="see">See the show</h2>
+          <div class="reel-in">
+            <figure class="reel-video">
+              <div class="screen">
+                <video src="media/gameplay.mp4" poster="media/gameplay-poster.jpg" width="540" height="1200" autoplay muted loop playsinline preload="metadata" aria-describedby="reel-cap"></video>
+                <script>(function (v) { if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.preload = 'none'; v.closest('.reel').classList.add('is-paused'); } })(document.currentScript.previousElementSibling);</script>
+                <button class="reel-toggle" type="button" hidden><span class="sr-only if-playing">Pause the video</span><span class="sr-only if-paused">Play the video</span></button>
+              </div>
+              <figcaption id="reel-cap">14 seconds of a free show: the troupe pops a garland of balloons from the seesaw and the crowd grows.</figcaption>
+            </figure>
+            <div class="reel-shots">
+              <ul class="shots">
+                <li><a href="media/shot-1.jpg"><img src="media/shot-1-sm.jpg" srcset="media/shot-1-sm.jpg 360w, media/shot-1.jpg 720w" sizes="150px" width="360" height="640" loading="lazy" decoding="async" alt="On the street stage an acrobat flies up into rows of coloured balloons above the town." /></a></li>
+                <li><a href="media/shot-2.jpg"><img src="media/shot-2-sm.jpg" srcset="media/shot-2-sm.jpg 360w, media/shot-2.jpg 720w" sizes="150px" width="360" height="640" loading="lazy" decoding="async" alt="Sunset by the clock tower: a garland of balloons bursts with a big BOOOM!" /></a></li>
+                <li><a href="media/shot-3.jpg"><img src="media/shot-3-sm.jpg" srcset="media/shot-3-sm.jpg 360w, media/shot-3.jpg 720w" sizes="150px" width="360" height="640" loading="lazy" decoding="async" alt="An acrobat leaps for a giant smiling balloon over the rooftops." /></a></li>
+                <li><a href="media/shot-4.jpg"><img src="media/shot-4-sm.jpg" srcset="media/shot-4-sm.jpg 360w, media/shot-4.jpg 720w" sizes="150px" width="360" height="640" loading="lazy" decoding="async" alt="Moonbury at night: rows of balloons under the moon." /></a></li>
+                <li><a href="media/shot-5.jpg"><img src="media/shot-5-sm.jpg" srcset="media/shot-5-sm.jpg 360w, media/shot-5.jpg 720w" sizes="150px" width="360" height="640" loading="lazy" decoding="async" alt="The troupe’s tour: a winding map of towns, each with the stars you won there." /></a></li>
+                <li><a href="media/shot-6.jpg"><img src="media/shot-6-sm.jpg" srcset="media/shot-6-sm.jpg 360w, media/shot-6.jpg 720w" sizes="150px" width="360" height="640" loading="lazy" decoding="async" alt="After the show: Bravo, Cloudsley! with three stars, the score and the tasks done." /></a></li>
+              </ul>
+              <p class="small">Tap a screenshot to see it full size.</p>
+            </div>
+          </div>
+        </section>
         <p>
           Follow the troupe on <a href="https://www.youtube.com/@aiplaz_games" data-track="youtube">YouTube</a> and
           <a href="https://www.tiktok.com/@aiplaz" data-track="tiktok">TikTok</a> for a new story every week.
@@ -72,6 +96,7 @@
         <p><span>Flip Troupe is made by <a href="../">Aiplaz</a></span><a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
       </div>
     </footer>
+    <script src="../reel.js" defer></script>
     <script src="../analytics.js" defer></script>
   </body>
 </html>

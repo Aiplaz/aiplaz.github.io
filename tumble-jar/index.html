@@ -57,6 +57,31 @@
         it boils some away, so aim well before the jar floods.
       </p>
 
+      <section class="reel" aria-labelledby="see">
+        <h2 id="see" data-i18n="m.h">See it in play</h2>
+        <div class="reel-in">
+          <figure class="reel-video">
+            <div class="screen">
+              <video src="media/gameplay.mp4" poster="media/gameplay-poster.jpg" width="540" height="1200" autoplay muted loop playsinline preload="metadata" aria-describedby="reel-cap"></video>
+              <script>(function (v) { if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.preload = 'none'; v.closest('.reel').classList.add('is-paused'); } })(document.currentScript.previousElementSibling);</script>
+              <button class="reel-toggle" type="button" hidden><span class="sr-only if-playing" data-i18n="m.pause">Pause the video</span><span class="sr-only if-paused" data-i18n="m.play">Play the video</span></button>
+            </div>
+            <figcaption id="reel-cap" data-i18n="m.cap">15 seconds of a game: throws, chains of merges and the water starting to boil.</figcaption>
+          </figure>
+          <div class="reel-shots">
+            <ul class="shots">
+              <li><a href="media/shot-1.jpg"><img src="media/shot-1-sm.jpg" srcset="media/shot-1-sm.jpg 360w, media/shot-1.jpg 720w" sizes="150px" width="360" height="780" loading="lazy" decoding="async" alt="Aiming a throw: a dotted arc shows where the next ball will land among the balls 16, 32 and 128." /></a></li>
+              <li><a href="media/shot-2.jpg"><img src="media/shot-2-sm.jpg" srcset="media/shot-2-sm.jpg 360w, media/shot-2.jpg 720w" sizes="150px" width="360" height="780" loading="lazy" decoding="async" alt="The water is halfway up the jar, with the balls 512 and 256 floating in it after a chain of five merges." /></a></li>
+              <li><a href="media/shot-3.jpg"><img src="media/shot-3-sm.jpg" srcset="media/shot-3-sm.jpg 360w, media/shot-3.jpg 720w" sizes="150px" width="360" height="780" loading="lazy" decoding="async" alt="A merge in the water makes it boil, glowing orange around the jar, for double points." /></a></li>
+              <li><a href="media/shot-4.jpg"><img src="media/shot-4-sm.jpg" srcset="media/shot-4-sm.jpg 360w, media/shot-4.jpg 720w" sizes="150px" width="360" height="780" loading="lazy" decoding="async" alt="A bomb lands on the pile of balls just above the water." /></a></li>
+              <li><a href="media/shot-5.jpg"><img src="media/shot-5-sm.jpg" srcset="media/shot-5-sm.jpg 360w, media/shot-5.jpg 720w" sizes="150px" width="360" height="780" loading="lazy" decoding="async" alt="Dark mode: the same jar in deep blue, with a throw being aimed." /></a></li>
+              <li><a href="media/shot-6.jpg"><img src="media/shot-6-sm.jpg" srcset="media/shot-6-sm.jpg 360w, media/shot-6.jpg 720w" sizes="150px" width="360" height="780" loading="lazy" decoding="async" alt="The water keeps rising under the balls 256 and 512, and the timer says throw!" /></a></li>
+            </ul>
+            <p class="small" data-i18n="m.tap">Tap a screenshot to see it full size.</p>
+          </div>
+        </div>
+      </section>
+
       <ul class="features">
           <li>
             <span class="ball" aria-hidden="true">2</span>
@@ -113,6 +138,7 @@
       </div>
     </footer>
     <script src="../i18n.js"></script>
+    <script src="../reel.js" defer></script>
     <script src="../analytics.js" defer></script>
   </body>
 </html>
