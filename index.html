@@ -6,8 +6,8 @@
     <title>Aiplaz · Small mobile games</title>
     <meta name="description" content="Aiplaz makes small mobile games. Our first game is Tumble Jar, a physics merge game." />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#E7EEF4" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0E141B" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#EEF0F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15132B" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://aiplaz.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aiplaz.github.io/" />
@@ -26,103 +26,103 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .game-actions {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 16px;
-      }
-      .game-actions .btn {
-        flex: 1 1 160px;
-        text-align: center;
-      }
-      .community-text {
-        margin: 0;
-        color: var(--ink-2);
-        font-size: 16px;
-        line-height: 1.5;
-      }
-    </style>
   </head>
-  <body>
-    <main class="wrap">
-      <div class="home-top"><span class="lang-slot"></span></div>
-      <section class="studio">
-        <div class="balls-row" aria-hidden="true">
-          <span class="ball">2</span><span class="ball b4">4</span><span class="ball b8">8</span>
+  <body class="home">
+    <header class="wrap top">
+      <a class="home-link" href="./" data-keep-lang><span class="mark" aria-hidden="true">a</span>Aiplaz</a>
+      <nav><span class="lang-slot"></span></nav>
+    </header>
+
+    <main>
+      <div class="wrap intro">
+        <h1 data-i18n="home.tagline">We make small mobile games: quick to learn, made with care.</h1>
+      </div>
+
+      <h2 class="sr-only" data-i18n="home.games">Our games</h2>
+
+      <section class="band w-tj" aria-labelledby="g-tj">
+        <div class="wrap band-in">
+          <a href="tumble-jar/" data-keep-lang tabindex="-1" aria-hidden="true"><img class="band-icon" src="tumble-jar/icon.png" width="172" height="172" alt="" /></a>
+          <div class="band-body">
+            <h3 class="game-name" id="g-tj">Tumble Jar</h3>
+            <p class="pitch" data-i18n="home.tj">A physics merge game: throw numbered balls into a jar, merge equal ones and keep the rising water down.</p>
+            <span class="badge" data-i18n="badge.testing">In testing on Google Play</span>
+            <div class="actions">
+              <a class="btn sun" href="tumble-jar/test" data-keep-lang data-i18n="btn.join">Join the test</a>
+              <a class="more" href="tumble-jar/" data-keep-lang data-i18n="btn.about">About the game</a>
+            </div>
+          </div>
         </div>
-        <h1>Aiplaz</h1>
-        <p class="meta" data-i18n="home.tagline">We make small mobile games: quick to learn, made with care.</p>
       </section>
 
-      <h2 data-i18n="home.games">Our games</h2>
-      <div class="card game-box">
-        <a class="game" href="tumble-jar/" data-keep-lang>
-          <img src="tumble-jar/icon.png" width="80" height="80" alt="" />
-          <div>
-            <h3>Tumble Jar</h3>
-            <p data-i18n="home.tj">A physics merge game: throw numbered balls into a jar, merge equal ones and keep the rising water down.</p>
+      <section class="band w-ft" aria-labelledby="g-ft">
+        <div class="wrap band-in">
+          <a href="flip-troupe/" tabindex="-1" aria-hidden="true"><img class="band-icon" src="flip-troupe/icon.png" width="172" height="172" alt="" /></a>
+          <div class="band-body">
+            <h3 class="game-name" id="g-ft">Flip Troupe</h3>
+            <p class="pitch" data-i18n="home.ft">A seesaw acrobat game: launch the troupe off an old seesaw, pop the balloons and keep the show going.</p>
             <span class="badge" data-i18n="badge.testing">In testing on Google Play</span>
+            <div class="actions">
+              <a class="btn sun" href="flip-troupe/test" data-i18n="btn.join">Join the test</a>
+              <a class="more" href="flip-troupe/" data-i18n="btn.about">About the game</a>
+            </div>
           </div>
-        </a>
-        <div class="game-actions">
-          <a class="btn primary" href="tumble-jar/test" data-keep-lang data-i18n="btn.join">Join the test</a>
-          <a class="btn" href="tumble-jar/" data-keep-lang data-i18n="btn.about">About the game</a>
         </div>
-      </div>
+      </section>
 
-      <div class="card game-box">
-        <a class="game" href="flip-troupe/">
-          <img src="flip-troupe/icon.png" width="80" height="80" alt="" />
-          <div>
-            <h3>Flip Troupe</h3>
-            <p data-i18n="home.ft">A seesaw acrobat game: launch the troupe off an old seesaw, pop the balloons and keep the show going.</p>
+      <section class="band w-tv" aria-labelledby="g-tv">
+        <div class="wrap band-in">
+          <a href="tiny-voyager/" tabindex="-1" aria-hidden="true"><img class="band-icon" src="tiny-voyager/icon.png" width="172" height="172" alt="" /></a>
+          <div class="band-body">
+            <h3 class="game-name" id="g-tv">Tiny Voyager</h3>
+            <p class="pitch" data-i18n="home.tv">Hold to fly right, let go to drift left. A tiny robot's trip from field to lava!</p>
             <span class="badge" data-i18n="badge.testing">In testing on Google Play</span>
+            <div class="actions">
+              <a class="btn" href="tiny-voyager/" data-i18n="btn.about">About the game</a>
+            </div>
           </div>
-        </a>
-        <div class="game-actions">
-          <a class="btn primary" href="flip-troupe/test" data-i18n="btn.join">Join the test</a>
-          <a class="btn" href="flip-troupe/" data-i18n="btn.about">About the game</a>
         </div>
-      </div>
+      </section>
 
-      <div class="card game-box">
-        <a class="game" href="tiny-voyager/">
-          <img src="tiny-voyager/icon.png" width="80" height="80" alt="" />
-          <div>
-            <h3>Tiny Voyager</h3>
-            <p data-i18n="home.tv">Hold to fly right, let go to drift left. A tiny robot's trip from field to lava!</p>
-            <span class="badge" data-i18n="badge.testing">In testing on Google Play</span>
-          </div>
-        </a>
-        <div class="game-actions">
-          <a class="btn" href="tiny-voyager/" data-i18n="btn.about">About the game</a>
+      <section class="wrap community" aria-labelledby="community">
+        <h2 id="community" data-i18n="home.community">Community</h2>
+        <p data-i18n="home.discord">Chat with us, share your best scores and tell us what to make next.</p>
+        <div class="actions">
+          <a class="btn sun" href="https://discord.gg/FXNYgRTFf" data-i18n="btn.discord" data-track="discord">Join our Discord</a>
         </div>
-      </div>
-
-      <h2 data-i18n="home.community">Community</h2>
-      <div class="card game-box">
-        <p class="community-text" data-i18n="home.discord">Chat with us, share your best scores and tell us what to make next.</p>
-        <div class="game-actions">
-          <a class="btn primary" href="https://discord.gg/FXNYgRTFf" data-i18n="btn.discord" data-track="discord">Join our Discord</a>
+        <div class="social-links">
+          <a class="more" href="https://www.youtube.com/@aiplaz_games" data-track="youtube">YouTube</a>
+          <a class="more" href="https://www.tiktok.com/@aiplaz" data-track="tiktok">TikTok</a>
         </div>
-      </div>
+      </section>
     </main>
 
-    <footer class="water">
+    <footer class="foot">
       <div class="wrap">
-        <nav aria-label="Tumble Jar">
-          <a href="tumble-jar/">Tumble Jar</a>
-          <a href="tumble-jar/support">Support</a>
-          <a href="tumble-jar/privacy">Privacy policy</a>
-        </nav>
-        <nav class="social" aria-label="Aiplaz">
-          <a href="https://discord.gg/FXNYgRTFf" data-track="discord">Discord</a>
-          <a href="https://www.youtube.com/@aiplaz_games" data-track="youtube">YouTube</a>
-          <a href="https://www.tiktok.com/@aiplaz" data-track="tiktok">TikTok</a>
-        </nav>
-        <p>© 2026 Aiplaz · Contact: <a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
+        <div class="games">
+          <div>
+            <strong>Tumble Jar</strong>
+            <nav aria-label="Tumble Jar">
+              <a href="tumble-jar/support" data-i18n="nav.support">Support</a>
+              <a href="tumble-jar/privacy" data-i18n="ft.privacy">Privacy policy</a>
+            </nav>
+          </div>
+          <div>
+            <strong>Flip Troupe</strong>
+            <nav aria-label="Flip Troupe">
+              <a href="flip-troupe/support" data-i18n="nav.support">Support</a>
+              <a href="flip-troupe/privacy" data-i18n="ft.privacy">Privacy policy</a>
+            </nav>
+          </div>
+          <div>
+            <strong>Tiny Voyager</strong>
+            <nav aria-label="Tiny Voyager">
+              <a href="tiny-voyager/support" data-i18n="nav.support">Support</a>
+              <a href="tiny-voyager/privacy" data-i18n="ft.privacy">Privacy policy</a>
+            </nav>
+          </div>
+        </div>
+        <p><span>© 2026 Aiplaz</span><span><span data-i18n="ft.contact">Contact:</span> <a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></span></p>
       </div>
     </footer>
     <script src="i18n.js"></script>

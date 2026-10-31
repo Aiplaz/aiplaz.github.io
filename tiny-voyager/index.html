@@ -6,8 +6,8 @@
     <title>Tiny Voyager · One touch, five worlds</title>
     <meta name="description" content="One touch, five wild worlds: a one-finger arcade trip from space down to the lava." />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#E7EEF4" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0E141B" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#EEF0F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15132B" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://aiplaz.github.io/tiny-voyager/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aiplaz.github.io/tiny-voyager/" />
@@ -34,52 +34,55 @@
         width: 100%;
         height: auto;
         aspect-ratio: 1200 / 630;
-        border-radius: 20px;
-        box-shadow: 0 0 0 1px var(--line), var(--shadow);
-        margin: 22px 0;
+        border-radius: 18px;
+        margin: 28px 0 8px;
       }
       .tv-mark {
         flex: none;
         display: inline-grid;
         place-items: center;
-        width: 32px;
-        height: 32px;
+        width: 34px;
+        height: 34px;
         border-radius: 50%;
-        background: var(--gold-soft);
-        color: var(--gold-text);
+        background: #2a2064;
+        color: #ffd56b;
         font: 800 15px/1 var(--display);
         padding-top: 2px;
       }
+      @media (prefers-color-scheme: dark) {
+        .tv-mark {
+          background: #362b7a;
+        }
+      }
     </style>
   </head>
-  <body>
-    <div class="wrap">
-      <header class="top">
-        <a class="brand" href="./"><img src="icon.png" width="40" height="40" alt="" />Tiny Voyager</a>
-        <nav><a href="support" data-i18n="nav.support">Support</a><a href="privacy" data-i18n="nav.privacy">Privacy</a><span class="lang-slot"></span></nav>
-      </header>
-    </div>
+  <body class="w-tv">
+    <header class="wrap top">
+      <a class="home-link" href="../" data-keep-lang><span class="mark" aria-hidden="true">a</span>Aiplaz</a>
+      <nav><a href="support" data-i18n="nav.support">Support</a><a href="privacy" data-i18n="nav.privacy">Privacy</a><span class="lang-slot"></span></nav>
+    </header>
 
-    <main class="wrap">
-      <div class="hero">
-        <img class="app-icon" src="icon.png" width="128" height="128" alt="Tiny Voyager icon: the little robot with a star antenna and a red scarf, flying above the clouds" />
-        <div>
-          <h1>Tiny Voyager</h1>
-          <p class="tagline">One touch, five worlds</p>
+    <main>
+      <section class="band w-tv">
+        <div class="wrap band-in">
+          <img class="band-icon" src="icon.png" width="172" height="172" alt="Tiny Voyager icon: the little robot with a star antenna and a red scarf, flying above the clouds" />
+          <div class="band-body">
+            <h1 class="game-name">Tiny Voyager</h1>
+            <p class="tagline">One touch, five worlds</p>
+            <span class="badge">Coming soon to the App Store and Google Play</span>
+          </div>
         </div>
-      </div>
+      </section>
 
+      <div class="wrap content">
       <p class="lead">
         Hold to fly right, let go to fly left. Climb through the sky into space, fall through a black hole into the
         deep and race the lava. 30 levels, an endless mode and a new daily route every day.
       </p>
 
-      <p><span class="badge">Coming soon to the App Store and Google Play</span></p>
-
       <img class="shot" src="og.jpg" width="1200" height="630" alt="Tiny Voyager: the little robot flies along a trail of stars above a purple planet, next to six robots in other costumes." />
 
-      <div class="card">
-        <ul class="features">
+      <ul class="features">
           <li>
             <span class="tv-mark" aria-hidden="true">1</span>
             <span><strong>One touch</strong>Hold anywhere on the screen to fly right, let go to fly left. Collect stars, dodge everything else.</span>
@@ -101,16 +104,16 @@
             <span><strong>No account</strong>Your progress stays on your phone. Ads appear only when you choose to watch one for a reward.</span>
           </li>
         </ul>
-      </div>
 
-      <div class="links">
-        <a class="btn primary" href="support" data-i18n="nav.support">Support</a>
-        <a class="btn" href="privacy" data-i18n="ft.privacy">Privacy policy</a>
-        <a class="btn" href="delete-data" data-i18n="ft.delete">Delete your data</a>
+      <div class="help-links">
+        <a class="btn small" href="support" data-i18n="nav.support">Support</a>
+        <a class="btn small" href="privacy" data-i18n="ft.privacy">Privacy policy</a>
+        <a class="btn small" href="delete-data" data-i18n="ft.delete">Delete your data</a>
+      </div>
       </div>
     </main>
 
-    <footer class="water">
+    <footer class="foot">
       <div class="wrap">
         <nav aria-label="Tiny Voyager">
           <a href="support" data-i18n="nav.support">Support</a>
@@ -118,13 +121,13 @@
           <a href="privacy-ro" hreflang="ro" lang="ro">Confidențialitate</a>
           <a href="delete-data" data-i18n="ft.delete">Delete your data</a>
         </nav>
-        <nav class="social" aria-label="Aiplaz">
+        <nav aria-label="Aiplaz">
           <a href="../" data-keep-lang>Aiplaz</a>
           <a href="https://discord.gg/FXNYgRTFf" data-track="discord">Discord</a>
           <a href="https://www.youtube.com/@aiplaz_games" data-track="youtube">YouTube</a>
           <a href="https://www.tiktok.com/@aiplaz" data-track="tiktok">TikTok</a>
         </nav>
-        <p>Tiny Voyager is made by Nicolae Sirghi · <a href="mailto:tinyvoyager.games@gmail.com">tinyvoyager.games@gmail.com</a></p>
+        <p><span>Tiny Voyager is made by Nicolae Sirghi</span><a href="mailto:tinyvoyager.games@gmail.com">tinyvoyager.games@gmail.com</a></p>
       </div>
     </footer>
     <script src="../i18n.js"></script>

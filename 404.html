@@ -6,8 +6,8 @@
     <title>Page not found · Aiplaz</title>
     <meta name="robots" content="noindex" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#E7EEF4" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0E141B" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#EEF0F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15132B" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,28 +18,36 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
+    <header class="wrap top">
+      <a class="home-link" href="/"><span class="mark" aria-hidden="true">a</span>Aiplaz</a>
+    </header>
+
     <main class="wrap lost">
       <div class="balls-row" aria-hidden="true">
         <span class="ball">2</span><span class="ball">2</span>
       </div>
       <h1>Page not found</h1>
       <p class="meta">This page sank to the bottom of the jar.</p>
-      <div class="links">
-        <a class="btn primary" href="/">Home</a>
-        <a class="btn" href="/tumble-jar/">Tumble Jar</a>
+      <div class="actions">
+        <a class="btn sun" href="/">Home</a>
+      </div>
+      <div class="social-links">
+        <a class="more" href="/tumble-jar/">Tumble Jar</a>
+        <a class="more" href="/flip-troupe/">Flip Troupe</a>
+        <a class="more" href="/tiny-voyager/">Tiny Voyager</a>
       </div>
     </main>
 
-    <footer class="water">
+    <footer class="foot">
       <div class="wrap">
-        <nav class="social" aria-label="Aiplaz">
+        <nav aria-label="Aiplaz">
           <a href="https://discord.gg/FXNYgRTFf" data-track="discord">Discord</a>
           <a href="https://www.youtube.com/@aiplaz_games" data-track="youtube">YouTube</a>
           <a href="https://www.tiktok.com/@aiplaz" data-track="tiktok">TikTok</a>
         </nav>
-        <p>Aiplaz · <a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
+        <p><span>Aiplaz</span><a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
       </div>
     </footer>
-    <script src="analytics.js" defer></script>
+    <script src="/analytics.js" defer></script>
   </body>
 </html>

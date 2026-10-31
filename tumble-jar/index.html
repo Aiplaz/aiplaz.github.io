@@ -6,8 +6,8 @@
     <title>Tumble Jar · Merge the balls, keep the water down</title>
     <meta name="description" content="Tumble Jar is a physics merge game: throw numbered balls into a jar, merge equal ones from 2 to 4096 and keep the rising water down." />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#E7EEF4" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0E141B" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#EEF0F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15132B" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://aiplaz.github.io/tumble-jar/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aiplaz.github.io/tumble-jar/" />
@@ -28,51 +28,36 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../style.css" />
-    <style>
-      .cta {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        flex-wrap: wrap;
-        padding: 18px 20px;
-      }
-      .cta p {
-        margin: 10px 0 0;
-      }
-    </style>
   </head>
-  <body>
-    <div class="wrap">
-      <header class="top">
-        <a class="brand" href="./"><img src="icon.png" width="40" height="40" alt="" />Tumble Jar</a>
-        <nav><a href="support" data-i18n="nav.support">Support</a><a href="privacy" data-i18n="nav.privacy">Privacy</a><span class="lang-slot"></span></nav>
-      </header>
-    </div>
+  <body class="w-tj">
+    <header class="wrap top">
+      <a class="home-link" href="../" data-keep-lang><span class="mark" aria-hidden="true">a</span>Aiplaz</a>
+      <nav><a href="support" data-i18n="nav.support">Support</a><a href="privacy" data-i18n="nav.privacy">Privacy</a><span class="lang-slot"></span></nav>
+    </header>
 
-    <main class="wrap">
-      <div class="hero">
-        <img class="app-icon" src="icon.png" width="128" height="128" alt="Tumble Jar icon: a jar with the balls 2, 4 and 8 in rising water" />
-        <div>
-          <h1>Tumble Jar</h1>
-          <p class="tagline" data-i18n="g.tagline">Merge the balls. Keep the water down.</p>
+    <main>
+      <section class="band w-tj">
+        <div class="wrap band-in">
+          <img class="band-icon" src="icon.png" width="172" height="172" alt="Tumble Jar icon: a jar with the balls 2, 4 and 8 in rising water" />
+          <div class="band-body">
+            <h1 class="game-name">Tumble Jar</h1>
+            <p class="tagline" data-i18n="g.tagline">Merge the balls. Keep the water down.</p>
+            <span class="badge" data-i18n="badge.testing">In testing on Google Play</span>
+            <p class="cta-note" data-i18n="g.cta">Play it before launch: join the test in three taps.</p>
+            <div class="actions">
+              <a class="btn sun" href="test" data-keep-lang data-i18n="btn.join">Join the test</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
+      <div class="wrap content">
       <p class="lead" data-i18n="g.lead">Tumble Jar is a physics merge game. Throw numbered balls into a jar that fills the whole screen: two equal balls
         merge into the next number, from 2 all the way up to 4096. The water keeps rising, and only a merge that touches
         it boils some away, so aim well before the jar floods.
       </p>
-      <div class="card cta">
-        <div>
-          <span class="badge" data-i18n="badge.testing">In testing on Google Play</span>
-          <p data-i18n="g.cta">Play it before launch: join the test in three taps.</p>
-        </div>
-        <a class="btn primary" href="test" data-keep-lang data-i18n="btn.join">Join the test</a>
-      </div>
 
-      <div class="card">
-        <ul class="features">
+      <ul class="features">
           <li>
             <span class="ball" aria-hidden="true">2</span>
             <span><strong data-i18n="f1.t">One finger</strong><span data-i18n="f1.d">Touch the jar, slide sideways to aim and lift your finger to throw. A quick tap drops the ball straight down.</span></span>
@@ -102,16 +87,16 @@
             <span><strong data-i18n="f7.t">13 languages, no account</strong><span data-i18n="f7.d">Plays offline. No account needed.</span></span>
           </li>
         </ul>
-      </div>
 
-      <div class="links">
-        <a class="btn primary" href="support" data-i18n="nav.support">Support</a>
-        <a class="btn" href="privacy" data-i18n="ft.privacy">Privacy policy</a>
-        <a class="btn" href="delete-data" data-i18n="ft.delete">Delete your data</a>
+      <div class="help-links">
+        <a class="btn small" href="support" data-i18n="nav.support">Support</a>
+        <a class="btn small" href="privacy" data-i18n="ft.privacy">Privacy policy</a>
+        <a class="btn small" href="delete-data" data-i18n="ft.delete">Delete your data</a>
+      </div>
       </div>
     </main>
 
-    <footer class="water">
+    <footer class="foot">
       <div class="wrap">
         <nav aria-label="Tumble Jar">
           <a href="support" data-i18n="nav.support">Support</a>
@@ -119,12 +104,12 @@
           <a href="privacy-ro" hreflang="ro" lang="ro">Confidențialitate</a>
           <a href="delete-data" data-i18n="ft.delete">Delete your data</a>
         </nav>
-        <nav class="social" aria-label="Aiplaz">
+        <nav aria-label="Aiplaz">
           <a href="https://discord.gg/FXNYgRTFf" data-track="discord">Discord</a>
           <a href="https://www.youtube.com/@aiplaz_games" data-track="youtube">YouTube</a>
           <a href="https://www.tiktok.com/@aiplaz" data-track="tiktok">TikTok</a>
         </nav>
-        <p><span data-i18n="ft.made">Tumble Jar is made by</span> <a href="../" data-keep-lang>Aiplaz</a> · <a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
+        <p><span><span data-i18n="ft.made">Tumble Jar is made by</span> <a href="../" data-keep-lang>Aiplaz</a></span><a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
       </div>
     </footer>
     <script src="../i18n.js"></script>

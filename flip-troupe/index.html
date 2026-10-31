@@ -17,29 +17,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../style.css" />
   </head>
-  <body>
-    <div class="wrap">
-      <header class="top">
-        <a class="brand" href="./"><img src="icon.png" width="40" height="40" alt="" />Flip Troupe</a>
-        <nav><a href="test">Join the test</a><a href="support">Support</a><a href="privacy">Privacy</a></nav>
-      </header>
-    </div>
+  <body class="w-ft">
+    <header class="wrap top">
+      <a class="home-link" href="../"><span class="mark" aria-hidden="true">a</span>Aiplaz</a>
+      <nav><a href="support">Support</a><a href="privacy">Privacy</a></nav>
+    </header>
 
-    <main class="wrap">
-      <h1>Flip Troupe</h1>
-      <p class="meta">A seesaw acrobat game by Aiplaz · in testing on Google Play (Android)</p>
-      <p><a class="btn primary" href="test">Join the test</a></p>
-      <p>
-        Launch Teo, Stella, Tiny and Pip off the seesaw, pop the balloons and keep the show going. Drop them on their
-        heads and the grumpy boss storms in.
-      </p>
-      <p>
-        Follow the troupe on <a href="https://www.youtube.com/@aiplaz_games" data-track="youtube">YouTube</a> and
-        <a href="https://www.tiktok.com/@aiplaz" data-track="tiktok">TikTok</a> for a new story every week.
-      </p>
+    <main>
+      <section class="band w-ft">
+        <div class="wrap band-in">
+          <img class="band-icon" src="icon.png" width="172" height="172" alt="Flip Troupe icon: two acrobats on a seesaw at sunset under bunting" />
+          <div class="band-body">
+            <h1 class="game-name">Flip Troupe</h1>
+            <p class="tagline">A seesaw acrobat game by Aiplaz</p>
+            <span class="badge">In testing on Google Play (Android)</span>
+            <div class="actions">
+              <a class="btn sun" href="test">Join the test</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrap content">
+        <p class="lead">
+          Launch Teo, Stella, Tiny and Pip off the seesaw, pop the balloons and keep the show going. Drop them on their
+          heads and the grumpy boss storms in.
+        </p>
+        <p>
+          Follow the troupe on <a href="https://www.youtube.com/@aiplaz_games" data-track="youtube">YouTube</a> and
+          <a href="https://www.tiktok.com/@aiplaz" data-track="tiktok">TikTok</a> for a new story every week.
+        </p>
+
+        <div class="help-links">
+          <a class="btn small" href="support">Support</a>
+          <a class="btn small" href="privacy">Privacy policy</a>
+          <a class="btn small" href="delete-data">Delete your data</a>
+        </div>
+      </div>
     </main>
 
-    <footer class="water">
+    <footer class="foot">
       <div class="wrap">
         <nav aria-label="Flip Troupe">
           <a href="./">Flip Troupe</a>
@@ -47,12 +64,12 @@
           <a href="privacy">Privacy policy</a>
           <a href="delete-data">Delete your data</a>
         </nav>
-        <nav class="social" aria-label="Aiplaz">
+        <nav aria-label="Aiplaz">
           <a href="https://discord.gg/FXNYgRTFf" data-track="discord">Discord</a>
           <a href="https://www.youtube.com/@aiplaz_games" data-track="youtube">YouTube</a>
           <a href="https://www.tiktok.com/@aiplaz" data-track="tiktok">TikTok</a>
         </nav>
-        <p>Flip Troupe is made by <a href="../">Aiplaz</a> · <a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
+        <p><span>Flip Troupe is made by <a href="../">Aiplaz</a></span><a href="mailto:support.aiplaz@gmail.com">support.aiplaz@gmail.com</a></p>
       </div>
     </footer>
     <script src="../analytics.js" defer></script>
